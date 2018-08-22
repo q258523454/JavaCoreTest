@@ -1,4 +1,4 @@
-package javacore;// Created by ZhangJian on 18/3/6.
+package javacore.other;// Created by ZhangJian on 18/3/6.
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

@@ -1,4 +1,4 @@
-package javacore.mapSort;
+package javacore.map.mapSort;
 
 import java.util.*;
 

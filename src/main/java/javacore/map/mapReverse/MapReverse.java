@@ -1,4 +1,4 @@
-package javacore.mapReverse;
+package javacore.map.mapReverse;
 // Created by ZhangJian on 18/1/16.
 
 import java.util.HashMap;

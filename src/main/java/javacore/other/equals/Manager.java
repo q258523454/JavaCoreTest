@@ -1,4 +1,4 @@
-package javacore.equals;
+package javacore.other.equals;
 
 /**
  * Created by mac on 17/7/20.

@@ -1,4 +1,4 @@
-package javacore.dynamicMethod;
+package javacore.other.dynamicMethod;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;

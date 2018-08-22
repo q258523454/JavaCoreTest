@@ -1,4 +1,4 @@
-package javacore;
+package javacore.other;
 
 /**
  * Created by mac on 17/7/21.

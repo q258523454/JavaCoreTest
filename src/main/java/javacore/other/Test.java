@@ -1,4 +1,4 @@
-package javacore;
+package javacore.other;
 
 import com.alibaba.fastjson.JSONObject;
 

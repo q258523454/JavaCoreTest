@@ -1,4 +1,4 @@
-package javacore.equals;
+package javacore.other.equals;
 
 import java.util.Objects;
 
