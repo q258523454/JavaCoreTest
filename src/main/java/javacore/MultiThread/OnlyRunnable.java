@@ -9,8 +9,8 @@ import javax.naming.Name;
  * @date :   2018-08-22
  */
 
-// Runnable接口避免了单继承的局限性,实现Runnable接口的方式，更加的符合面向对象，线程分为两部分，一部分线程对象，一部分线程任务
-// 而继承Thread类，线程对象和线程任务耦合在一起。一旦创建Thread类的子类对象，既是线程对象，有又有线程任务。
+// Runnable接口避免了单继承的局限性,实现Runnable接口的方式，更加的符合面向对象，线程分为两部分，一部分:线程对象，一部分:线程任务
+// 而继承Thread类，线程对象和线程任务耦合在一起。一旦创建Thread类的子类对象，既是线程对象，又有线程任务。
 public class OnlyRunnable implements Runnable {
 
 

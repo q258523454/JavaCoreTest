@@ -1,7 +1,5 @@
 package javacore.MultiThread;
 
-import sun.jvm.hotspot.debugger.ThreadAccess;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -15,10 +13,10 @@ import java.util.UUID;
  * @date :   2018-08-21
  */
 
-public class MyRunnable implements Runnable {
+public class MyRunnableInsertData implements Runnable {
     private String name;
 
-    public MyRunnable(String name) {
+    public MyRunnableInsertData(String name) {
         this.name = name;
     }
 
@@ -84,7 +82,7 @@ public class MyRunnable implements Runnable {
 //        100万条数据插入耗时: 85 s
 
         for (int i = 0; i < 10; i++) {
-            MyRunnable myRunnable = new MyRunnable(i + "");
+            MyRunnableInsertData myRunnable = new MyRunnableInsertData(i + "");
             Thread thread = new Thread(myRunnable, ""); // 对同一个对象创建多线程
             thread.start();
         }

@@ -13,10 +13,10 @@ import java.util.UUID;
  * @date :   2018-08-21
  */
 
-public class MyThread extends Thread {
+public class MyThreadInsertData extends Thread {
     private String name;
 
-    public MyThread(String name) {
+    public MyThreadInsertData(String name) {
         this.name = name;
     }
 
@@ -82,7 +82,7 @@ public class MyThread extends Thread {
 //        100万条数据插入耗时: 85 s
 
         for (int i = 0; i < 10; i++) {
-            new MyThread(String.valueOf(i)).start();
+            new MyThreadInsertData(String.valueOf(i)).start();
         }
 
     }
