@@ -10,7 +10,7 @@ import java.util.List;
  * @date :   2018-08-21
  */
 
-public class MultiThreadTest2 {
+public class MultiThreadList {
 
     /**
      * 多线程处理
@@ -64,7 +64,7 @@ public class MultiThreadTest2 {
     }
 
     public static void main(String[] args) {
-        MultiThreadTest2 multiThreadTest = new MultiThreadTest2();
+        MultiThreadList multiThreadTest = new MultiThreadList();
         // 准备数据
         List<String> data = new ArrayList<String>();
         for (int i = 0; i < 5000; i++) {

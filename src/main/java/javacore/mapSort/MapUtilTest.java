@@ -5,7 +5,7 @@ import java.util.*;
 public class MapUtilTest {
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());
-        Collections.sort( list, new Comparator<Map.Entry<K, V>>() {
+        Collections.sort(list, new Comparator<Map.Entry<K, V>>() {
             @Override
             public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {
                 return (o1.getValue()).compareTo(o2.getValue());    // 升序排列
@@ -31,7 +31,7 @@ public class MapUtilTest {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
         System.out.println("排序后:");
-         map = MapUtilTest.sortByValue(map);
+        map = MapUtilTest.sortByValue(map);
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }

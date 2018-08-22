@@ -7,7 +7,7 @@ package javacore.MultiThread;
  * @date :   2018-08-20
  */
 
-public class MultiThreadTest1 implements Runnable {
+public class LearnTest implements Runnable {
     public synchronized void run() {
         for (int i = 0; i < 10; i++) {
             System.out.println(Thread.currentThread().getName() + " synchronized loop " + i);
@@ -15,7 +15,7 @@ public class MultiThreadTest1 implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        MultiThreadTest1 test = new MultiThreadTest1(); // 创建对象
+        LearnTest test = new LearnTest(); // 创建对象
 
         // 1.同一个对象的两个线程, 在run()存在互斥锁, 因为一个对象只有一把锁, 一个线程在用, 其他的线程必须等待, 但是可以访问非synchronized方法
         Thread ta = new Thread(test, "A1");
@@ -26,8 +26,8 @@ public class MultiThreadTest1 implements Runnable {
         System.out.println("----------");
 
         // 2.不同对象, 访问synchronized方法是不存在互斥的, 因为没个对象有各自的锁
-        MultiThreadTest1 test1_a = new MultiThreadTest1();
-        MultiThreadTest1 test1_b = new MultiThreadTest1();
+        LearnTest test1_a = new LearnTest();
+        LearnTest test1_b = new LearnTest();
         Thread tt1 = new Thread(test1_a, "A");
         Thread tt2 = new Thread(test1_b, "B");
         tt1.start();
