@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Created by
@@ -17,6 +18,7 @@ public class Run {
 
     // 新开线程, 设置超时时间 [主线程会阻塞, 除非线程完成或者超时]
     public static Logger log = LoggerFactory.getLogger(Run.class);
+    private static final AtomicReference<Thread> atomicReference = new AtomicReference<Thread>();
 
 
     // 使用嵌套子线程的方法, 为线程中的线程设置超时时间, 且不影响主线程的运行
@@ -25,25 +27,31 @@ public class Run {
         System.out.println("AA");
         backgroundExecutor.execute(new Runnable() {
             public void run() {
-                Callable callable = Executors.callable(new WorkerThread("test", 1000), "子线程-嵌套子线程");
+
+                WorkerThread workerThread = new WorkerThread("test", 20 * 1000);
+                Callable callable = Executors.callable(workerThread, "子线程-嵌套子线程");
                 FutureTask<String> future = new FutureTask(callable);
                 Thread thread = new Thread(future);
                 thread.start();
+
                 System.out.println("BB");
                 try {
-                    String res = future.get(2000, TimeUnit.MILLISECONDS);   // 设置等待线程的超时时间
+                    // TODO 实际上这里并没有因为超时而终止嵌套子线程， 嵌套子线程仍然在运行, 必须在嵌套子线程的方法里面加条件判断,
+                    // TODO 然后在嵌套子线程中通过抛异常来终止线程
+                    String res = future.get(1, TimeUnit.MILLISECONDS);   // 设置等待线程的超时时间
                     log.info("子线程:" + Thread.currentThread().getName() + "完成{" + res + "}任务");
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    log.error("嵌套子线程-中断");
                     future.cancel(true);
+                    e.printStackTrace();
                 } catch (ExecutionException e) {
-                    e.printStackTrace();
-                    log.error("ExecutionException", e);
-                } catch (TimeoutException e) {
-                    e.printStackTrace();
+                    log.error("嵌套子线程-运行异常");
                     future.cancel(true);
-                } finally {
-                    thread.interrupt(); // 中断线程
+                    e.printStackTrace();
+                } catch (TimeoutException e) {
+                    log.error("嵌套子线程-超时");
+                    future.cancel(true);  // 经过测试, 里面包含了方法:thread.interrupt()
+                    e.printStackTrace();
                 }
             }
         });
