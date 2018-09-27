@@ -1,4 +1,4 @@
-package javacore.MultiThread.ThreadPool;
+package javacore.MultiThread.ThreadPoolTimeOut_Block;
 
 
 /**
@@ -11,21 +11,24 @@ package javacore.MultiThread.ThreadPool;
 public class WorkerThread implements Runnable {
     private String command;
 
-    public WorkerThread(String command) {
+    private long timeout;
+
+    public WorkerThread(String command,long timeout) {
         this.command = command;
+        this.timeout = timeout;
     }
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName() + " Start. Command = " + command);
+        System.out.println(Thread.currentThread().getName() + " Start. Command = " + command + ",timeout is :" + timeout);
         processCommand(Thread.currentThread().getName(), command);
         System.out.println(Thread.currentThread().getName() + " End.");
     }
 
     private void processCommand(String threadName, String command) {
-        System.out.println("新开线程" + threadName + ":, 准备进行操作:" + command);
+        System.out.println("线程 " + threadName + ":, 正在进行操作:" + command);
         try {
-            Thread.sleep(3000);
+            Thread.sleep(this.timeout);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -21,10 +21,11 @@ public class Run {
         for (int i = 0; i < theadNum; i++) {
             executorService.execute(worker);
         }
-        // 关闭线程池
-        executorService.shutdown();
+
+        executorService.shutdown(); // 关闭线程池, 不会影响线程的执行
+
         while (!executorService.isTerminated()) {
-            // wating finished
+            // 等待所有线程执行完成
         }
         System.out.println(theadNum + " Threads Have Finished");
     }
