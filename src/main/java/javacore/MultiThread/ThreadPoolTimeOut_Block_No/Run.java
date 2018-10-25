@@ -34,6 +34,9 @@ public class Run {
                 Thread thread = new Thread(future);
                 thread.start();
 
+                // 方式二: ExecutorService 执行嵌套子线程
+                // ExecutorService executorService = Executors.newSingleThreadExecutor();
+                // executorService.execute(future);
                 System.out.println("BB");
                 try {
                     // TODO 实际上这里并没有因为超时而终止嵌套子线程， 嵌套子线程仍然在运行, 必须在嵌套子线程的方法里面加条件判断,
@@ -42,11 +45,9 @@ public class Run {
                     log.info("子线程:" + Thread.currentThread().getName() + "完成{" + res + "}任务");
                 } catch (InterruptedException e) {
                     log.error("嵌套子线程-中断");
-                    future.cancel(true);
                     e.printStackTrace();
                 } catch (ExecutionException e) {
                     log.error("嵌套子线程-运行异常");
-                    future.cancel(true);
                     e.printStackTrace();
                 } catch (TimeoutException e) {
                     log.error("嵌套子线程-超时");
