@@ -1,5 +1,8 @@
 package swordoffer66;
 
+
+import static swordoffer66.ListNode.printListNode;
+
 /**
  * Created By
  * 输入一个链表[不带头结点]，反转链表后，输出新链表的表头。
@@ -9,14 +12,6 @@ package swordoffer66;
  */
 public class Solution15 {
 
-    public static class ListNode {
-        int data;
-        ListNode next;
-
-        ListNode(int data) {
-            this.data = data;
-        }
-    }
 
     public ListNode ReverseList(ListNode head) {
 
@@ -38,27 +33,15 @@ public class Solution15 {
     }
 
 
-    public static void printListNode(ListNode head) {
-        if (head == null) {
-            return;
-        }
-        String str = "";
-        while (head != null) {
-            str += head.data + " ";
-            head = head.next;
-        }
-        System.out.println(str);
-    }
-
     public static void main(String[] args) {
         ListNode head = new ListNode(0);
-        head.data = 1;
+        head.val = 1;
         head.next = null;
         int i = 2;
         ListNode listNode = head;
         while (i <= 10) {
             ListNode temp = new ListNode(0);
-            temp.data = i;
+            temp.val = i;
             listNode.next = temp;
             listNode = temp;
             i++;

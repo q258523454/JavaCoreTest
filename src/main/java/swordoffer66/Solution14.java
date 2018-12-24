@@ -1,5 +1,7 @@
 package swordoffer66;
 
+import static swordoffer66.ListNode.printListNode;
+
 /**
  * Created By
  * 剑指offer 题目13:输入一个链表【不带头结点】，输出该链表中倒数第k个结点
@@ -8,11 +10,6 @@ package swordoffer66;
  * @date :   2018-12-19
  */
 public class Solution14 {
-
-    public static class ListNode {
-        int data;
-        ListNode next;
-    }
 
 
     public ListNode FindKthToTail(ListNode head, int k) {
@@ -39,30 +36,15 @@ public class Solution14 {
 
     }
 
-
-    public static void printListNode(ListNode head) {
-        if (head == null) {
-            return;
-        }
-        String str = "";
-        while (head != null) {
-            str += head.data + " ";
-            head = head.next;
-        }
-        System.out.println(str);
-    }
-
-
-
     public static void main(String[] args) {
-        ListNode head = new ListNode();
-        head.data = 1;
+        ListNode head = new ListNode(0);
+        head.val = 1;
         head.next = null;
-        int i=2;
+        int i = 2;
         ListNode listNode = head;
         while (i <= 10) {
-            ListNode temp = new ListNode();
-            temp.data = i;
+            ListNode temp = new ListNode(0);
+            temp.val = i;
             listNode.next = temp;
             listNode = temp;
             i++;
@@ -70,7 +52,7 @@ public class Solution14 {
         printListNode(head);
         Solution14 solution14 = new Solution14();
         ListNode res = solution14.FindKthToTail(head, 10);
-        System.out.println(res.data);
+        System.out.println(res.val);
 
     }
 }
