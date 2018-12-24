@@ -68,8 +68,6 @@ public class Solution15 {
         Solution15 solution15 = new Solution15();
         ListNode res = solution15.ReverseList(head);
         printListNode(res);
-
-
     }
 
 
