@@ -11,7 +11,16 @@ import java.util.ArrayList;
  */
 
 
-public class Solution18 {
+public class Solution19 {
+
+    /***
+     * 比想象中的细节要多
+     * 1.确定循环圈数
+     * 2.避免重复提取数据
+     * 3.矩阵为向量的时候
+     * @param matrix
+     * @return
+     */
     public ArrayList<Integer> printMatrix(int[][] matrix) {
 
         ArrayList<Integer> arrayList = new ArrayList<>();
@@ -82,8 +91,8 @@ public class Solution18 {
             System.out.println();
         }
 
-        Solution18 solution18 = new Solution18();
-        ArrayList<Integer> arrayList2 = solution18.printMatrix(a);
+        Solution19 solution19 = new Solution19();
+        ArrayList<Integer> arrayList2 = solution19.printMatrix(a);
         System.out.println(arrayList2.toString());
     }
 
