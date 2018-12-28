@@ -16,15 +16,8 @@ public class Solution30 {
         int max = array[0];
         int tempMax = array[0];
         for (int i = 1; i < array.length; i++) {
-            // 注意是大于等于(最大子序列,如果题目要返回该子序列,这个等于"="号必须要)
-            if (tempMax + array[i] >= array[i]) {
-                tempMax += array[i];
-            } else {
-                tempMax = array[i];
-            }
-            if (tempMax > max) {
-                max = tempMax;
-            }
+            tempMax = (tempMax + array[i] >= array[i]) ? tempMax + array[i] : array[i];
+            max = (tempMax > max) ? tempMax : max;
         }
         return max;
     }
