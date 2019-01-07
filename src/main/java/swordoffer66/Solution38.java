@@ -1,39 +1,64 @@
 package swordoffer66;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.LinkedList;
 
 /**
  * Created By
- * 一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。请写程序找出这两个只出现一次的数字。
+ * 输入一棵二叉树，求该树的深度。从根结点到叶结点依次经过的结点（含根、叶结点）形成树的一条路径，最长路径的长度为树的深度
  *
  * @author :   zhangj
  * @date :   2019-01-07
  */
-
-
 public class Solution38 {
-    // num1,num2分别为长度为1的数组。传出参数
-    // 将num1[0],num2[0]设置为返回结果
-    public void FindNumsAppearOnce(int[] array, int num1[], int num2[]) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for (int i = 0; i < array.length; i++) {
-            if (map.get(array[i]) == null) {
-                map.put(array[i], 1);
+
+
+//    public class TreeNode {
+//        int val = 0; // 看成degree
+//        TreeNode left = null;
+//        TreeNode right = null;
+//
+//        public TreeNode(int val) {
+//            this.val = val;
+//        }
+//    }
+
+
+    public int TreeDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        LinkedList<TreeNode> treeNodeList = new LinkedList<>();
+        treeNodeList.add(root);
+        root.val = 1;
+        int deep = -1;
+        TreeNode temp = treeNodeList.getFirst();
+        while (temp != null) {
+            deep = temp.val;
+            if (temp.left != null) {
+                temp.left.val = temp.val + 1;
+                treeNodeList.add(temp.left);
+            }
+            if (temp.right != null) {
+                temp.right.val = temp.val + 1;
+                treeNodeList.add(temp.right);
+            }
+            treeNodeList.removeFirst();
+            if (!treeNodeList.isEmpty()) {
+                temp = treeNodeList.getFirst();
             } else {
-                map.put(array[i], map.get(array[i]) + 1);
+                temp = null;
             }
         }
-        int j = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (map.get(array[i]) == 1 && j == 1) {
-                num2[0] = array[i];
-                j++;
-            }
-            if (map.get(array[i]) == 1 && j == 0) {
-                num1[0] = array[i];
-                j++;
-            }
-        }
+        return deep;
     }
+
+
+    public static void main(String[] args) {
+        swordoffer66.TreeNode A = swordoffer66.TreeNode.getTree(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15});
+        swordoffer66.TreeNode.printTreeBroad(A);
+        System.out.println(new Solution38().TreeDepth(A));
+    }
+
+
 }
