@@ -34,7 +34,7 @@ public class Solution37_2 {
         }
     }
 
-    // 二分查找最后一个k的index,不存在返回-1
+    // 二分查找最后一个k的index,不存在返回-2
     public int getLastIndexOfK(int[] array, int start, int end, int k) {
         if (start > end) {
             return -2;
