@@ -39,11 +39,13 @@ public class Solution42 {
             }
         }
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(l);
-        arrayList.add(r);
+        if (l != -1 && r != -1) {
+            arrayList.add(l);
+            arrayList.add(r);
+        }
         return arrayList;
     }
-    
+
     public static void main(String[] args) {
         int[] a = new int[]{1, 2, 3, 4, 5, 6, 7};
 
