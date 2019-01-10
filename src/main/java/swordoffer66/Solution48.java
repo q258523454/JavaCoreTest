@@ -29,7 +29,7 @@ public class Solution48 {
                 } else {
                     count0--; // 大小王减1
                     numbers[i - 1]++;
-                    i--;
+                    i--; //【关键】
                 }
             }
         }
