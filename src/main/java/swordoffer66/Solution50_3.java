@@ -12,7 +12,6 @@ public class Solution50_3 {
 
     //  异或^:计算加法 (不包含进位), &:计算进位
     public int Add(int num1, int num2) {
-
         // temp存储每次计算的进位
         int temp = num2;
         while (temp != 0) {
