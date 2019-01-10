@@ -11,16 +11,13 @@ import java.util.Arrays;
 public class QuickSort {
 
     public int partition(int arr[], int start, int end) {
-
         int key = arr[start];
         while (start < end) {
             // 右边第一个比cur小
             while (arr[end] >= key && start < end) {
                 end--;
             }
-
             arr[start] = arr[end];
-
             // 左边第一个比cur大
             while (arr[start] <= key && start < end) {
                 start++;
@@ -28,8 +25,6 @@ public class QuickSort {
             arr[end] = arr[start];
         }
         arr[end] = key;
-
-//        System.out.println(Arrays.toString(arr));
         return end;
     }
 
