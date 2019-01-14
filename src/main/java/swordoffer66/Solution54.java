@@ -17,6 +17,8 @@ public class Solution54 {
     }
 
     public static void main(String[] args) {
-
+        String str = "abc";
+        String a = str.replace('a', '\0');
+        System.out.println(a);
     }
 }
