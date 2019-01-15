@@ -64,7 +64,7 @@ public class TreeNode {
         ListNode listNode = new ListNode(root);
         ListNode temp = listNode;
         while (listNode != null) {
-            System.out.print(listNode.treeNode.val);
+            System.out.print(" " + listNode.treeNode.val);
 
             if (null != listNode.treeNode.left) {
                 temp.next = new ListNode(listNode.treeNode.left);
