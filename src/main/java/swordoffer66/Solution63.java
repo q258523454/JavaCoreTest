@@ -14,32 +14,24 @@ public class Solution63 {
     public int count = 0;
 
     // 中序遍历
-    public void midSearch(TreeNode root) {
-        if (root == null) {
-            return;
-        }
-        midSearch(root.left);
-        System.out.print(" " + root.val);
-        midSearch(root.right);
-    }
-
-    public void midSearch(TreeNode root, int k,TreeNode[] res) {
+    public void midSearch(TreeNode root, int k, TreeNode[] res) {
         if (root == null || count > k) {
             return;
         }
-        midSearch(root.left,k,res);
+        midSearch(root.left, k, res);
         count++;
         if (count == k) {
             res[0] = root;
-            System.out.println(root.val);
         }
-        midSearch(root.right,k,res);
+        midSearch(root.right, k, res);
     }
 
 
     TreeNode KthNode(TreeNode pRoot, int k) {
-
-        return null;
+        TreeNode[] res = new TreeNode[1];
+        midSearch(pRoot, k, res);
+        TreeNode result = res[0];
+        return result;
     }
 
 
