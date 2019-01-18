@@ -24,7 +24,11 @@ public class Solution65 {
 
 
     public ArrayList<Integer> maxInWindows(int[] num, int size) {
+
         ArrayList<Integer> arrayList = new ArrayList<>();
+        if (size == 0) {
+            return arrayList;
+        }
         for (int i = 0; i <= num.length - size; i++) {
             int max = num[i];
             for (int j = i + 1; j < size + i; j++) {
@@ -32,7 +36,6 @@ public class Solution65 {
             }
             arrayList.add(max);
         }
-
         return arrayList;
     }
 
