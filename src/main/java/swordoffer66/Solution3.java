@@ -25,7 +25,7 @@ public class Solution3 {
 
     public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         if (listNode == null) {
-            return null;
+            return new ArrayList<>();
         }
         printListFromTailToHead(listNode.next);
         arrayList.add(listNode.val);
