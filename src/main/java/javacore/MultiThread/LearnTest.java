@@ -25,7 +25,7 @@ public class LearnTest implements Runnable {
         Thread.sleep(500);
         System.out.println("----------");
 
-        // 2.不同对象, 访问synchronized方法是不存在互斥的, 因为没个对象有各自的锁
+        // 2.不同对象, 访问synchronized方法是不存在互斥的, 因为每个对象有各自的锁
         LearnTest test1_a = new LearnTest();
         LearnTest test1_b = new LearnTest();
         Thread tt1 = new Thread(test1_a, "A");
