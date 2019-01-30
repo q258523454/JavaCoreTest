@@ -7,8 +7,11 @@ public class EnumTest {
     public enum ErrorCodeEn {
         OK(0, "成功"),
         ERROR_A(100, "错误A"),
-        ERROR_B(200, "错误B");
+        ERROR_B(200, "错误B"),
+        ERROR_C;
 
+        ErrorCodeEn(){
+        }
         ErrorCodeEn(int number, String description) {
             this.code = number;
             this.description = description;
@@ -24,8 +27,8 @@ public class EnumTest {
     }
 
     public static void main(String[] args) {
-        for (ErrorCodeEn s : ErrorCodeEn.values()) {
-            System.out.println("code: " + s.getCode() + ", description: " + s.getDescription());
-        }
+        Test test = new Test();
+        System.out.println(test.getClass().getClassLoader() + "");
+        System.out.println(test.getClass().getInterfaces() + "");
     }
 }
