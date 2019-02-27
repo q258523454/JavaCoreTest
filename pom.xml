@@ -100,7 +100,7 @@
                             <!-- 配置主程序 java -jar 默认Class -->
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>javacore.other.Test</mainClass>
+                            <mainClass>javacore.enumtest.Test</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -127,7 +127,7 @@
                             <!-- 配置主程序 java -jar 默认Class -->
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>javacore.other.Test</mainClass>
+                            <mainClass>javacore.enumtest.Test</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
