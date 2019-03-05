@@ -25,8 +25,8 @@ public class Singleton {
         /**
          * 解析:为什么下面的count1=1,count2=0?
          * 注意:这里不是new实例, 而是单例模型
-         * 如果是new, 是按照 静态变量singleton实例化(执行构造函数)-->静态变量count1初始化(没有赋值操作)-->静态变量count2初始化-->构造函数
-         * 如果是单例, 是按照 静态变量singleton实例化(执行构造函数)-->静态变量count1初始化(没有赋值操作)-->静态变量count2初始化
+         * 如果是new, 是按照 静态变量singleton实例化(这里会执行构造函数)-->静态变量count1初始化(没有赋值操作)-->静态变量count2初始化-->构造函数
+         * 如果是单例, 是按照 静态变量singleton实例化(这里会执行构造函数)-->静态变量count1初始化(没有赋值操作)-->静态变量count2初始化
          *
          */
         Singleton singleton = Singleton.getInstance(); // count1=1,count2=0
