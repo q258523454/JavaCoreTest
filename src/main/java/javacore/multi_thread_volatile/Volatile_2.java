@@ -1,4 +1,4 @@
-package javacore.volatile_test;
+package javacore.multi_thread_volatile;
 
 /**
  * Created By
