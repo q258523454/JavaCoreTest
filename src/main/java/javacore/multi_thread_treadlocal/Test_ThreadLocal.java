@@ -6,13 +6,13 @@ package javacore.multi_thread_treadlocal;
  * @author :   zhangj
  * @date :   2019-03-05
  */
-public class ThreadLocalExample {
+public class Test_ThreadLocal {
 
     public static class MyRunnable implements Runnable {
 
-        int local = 0;
-        public static int global = 0;
-        private ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>();
+        int local = 0;                                                          // 实例(对象)变量
+        public static int global = 0;                                           // 静态变量(全局)
+        private ThreadLocal<Integer> threadLocal = new ThreadLocal<Integer>();  // 线程的局部变量
 
         @Override
         public void run() {
