@@ -1,4 +1,4 @@
-package javacore.multi_thread.futuretask.futureTaskTest;
+package javacore.multi_thread_threadpool_futuretask.futuretask.futureTaskTest;
 
 import java.util.concurrent.*;
 

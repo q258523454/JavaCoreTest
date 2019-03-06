@@ -1,4 +1,4 @@
-package javacore.multi_thread.synchronized_compare;
+package javacore.multi_thread_base.synchronized_compare;
 
 /**
  * Created By

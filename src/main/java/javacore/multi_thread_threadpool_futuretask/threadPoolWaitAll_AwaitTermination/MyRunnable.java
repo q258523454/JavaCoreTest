@@ -1,4 +1,4 @@
-package javacore.multi_thread.threadPoolWaitAll_AwaitTermination;
+package javacore.multi_thread_threadpool_futuretask.threadPoolWaitAll_AwaitTermination;
 
 
 import java.util.concurrent.CountDownLatch;

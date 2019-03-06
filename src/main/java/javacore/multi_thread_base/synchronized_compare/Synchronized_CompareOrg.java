@@ -1,4 +1,4 @@
-package javacore.multi_thread.synchronized_compare;
+package javacore.multi_thread_base.synchronized_compare;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
@@ -10,29 +10,29 @@ import java.util.concurrent.Executors;
  * @author :   zhangj
  * @date :   2019-02-27
  */
-public class Synchronized_CompareFaster {
+public class Synchronized_CompareOrg {
     public static void main(String[] args) {
 
         ExecutorService service = Executors.newCachedThreadPool();
         final CountDownLatch callOrder = new CountDownLatch(1);
         final CountDownLatch latch = new CountDownLatch(3);
 
-        final SynchonizedThis sc = new SynchonizedThis();
+        final SynchonizedMethod sc = new SynchonizedMethod();
 
         for (int i = 0; i < 3; i++) {
             Runnable runnable = new Runnable() {
                 public void run() {
                     try {
-                        callOrder.await();  // 线程阻塞，等待主线程中执行 callOrder.countDown();
+                        callOrder.await();  //线程阻塞，等待主线程中执行 callOrder.countDown();
                         sc.started();
-                        latch.countDown();  // 每执行一次started()方法，latch 减少1
+                        latch.countDown();  //每执行一次started()方法，latch 减少1
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
 
             };
-            service.execute(runnable);  // 线程池执行其中的线程
+            service.execute(runnable);  //线程池执行其中的线程
         }
         try {
             Thread.sleep((long) (Math.random() * 1000));

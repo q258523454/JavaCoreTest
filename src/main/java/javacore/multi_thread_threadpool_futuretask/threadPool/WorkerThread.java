@@ -1,4 +1,4 @@
-package javacore.multi_thread.threadPool;
+package javacore.multi_thread_threadpool_futuretask.threadPool;
 
 
 /**

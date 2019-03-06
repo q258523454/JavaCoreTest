@@ -1,4 +1,4 @@
-package javacore.multi_thread.threadPool;
+package javacore.multi_thread_threadpool_futuretask.threadPool;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

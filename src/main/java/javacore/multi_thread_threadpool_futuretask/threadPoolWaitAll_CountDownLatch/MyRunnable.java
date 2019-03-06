@@ -1,4 +1,4 @@
-package javacore.multi_thread.threadPoolWaitAll_CountDownLatch;
+package javacore.multi_thread_threadpool_futuretask.threadPoolWaitAll_CountDownLatch;
 
 
 import java.util.concurrent.CountDownLatch;

@@ -1,4 +1,4 @@
-package javacore.multi_thread.synchronized_multiList;
+package javacore.multi_thread_threadpool_futuretask.synchronized_multiList;
 
 import java.util.ArrayList;
 import java.util.List;

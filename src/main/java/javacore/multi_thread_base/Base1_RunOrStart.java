@@ -1,4 +1,4 @@
-package javacore.multi_thread;
+package javacore.multi_thread_base;
 
 /**
  * Created By

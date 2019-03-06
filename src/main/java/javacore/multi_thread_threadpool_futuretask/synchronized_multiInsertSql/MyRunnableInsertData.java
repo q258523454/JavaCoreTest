@@ -1,4 +1,4 @@
-package javacore.multi_thread.synchronized_multiInsertSql;
+package javacore.multi_thread_threadpool_futuretask.synchronized_multiInsertSql;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
