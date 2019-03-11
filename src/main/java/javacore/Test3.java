@@ -21,10 +21,8 @@ public class Test3 {
     }
 
     public static void main(String[] args) {
-//        Test3 test3 = Test3.getInstance();
-        Test3 test3 = new Test3();
-
-        System.out.println("count1=" + Test3.count1);
-        System.out.println("count2=" + Test3.count2);
+        if (0 == 0) {
+            System.out.println(1);
+        }
     }
 }
