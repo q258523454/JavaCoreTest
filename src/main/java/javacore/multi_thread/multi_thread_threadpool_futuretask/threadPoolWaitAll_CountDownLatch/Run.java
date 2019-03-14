@@ -13,6 +13,8 @@ import java.util.concurrent.Executors;
 
 public class Run {
 
+
+    // CyclicBarrier比CountDownLatch 更强大
     public static void main(String[] args) throws InterruptedException {
         int theadNum = 5;
         // CountDownLatch 需要将对象传入需要'等待完成'的线程对象中

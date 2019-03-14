@@ -10,7 +10,7 @@ package javacore.multi_thread.multi_thread_base.synchronized_reentrantlock;
 
 // 不可重入锁(模拟)
 public class CannotReentry {
-    //默认情况下表示当前锁处于未锁定状态
+    // 默认情况下表示当前锁处于未锁定状态
     private boolean isLocked = false;
 
     // 上锁

@@ -33,13 +33,21 @@
 
 
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.1.5.RELEASE</version>
+        </dependency>
+
         <!-- 2.下载在局域网nexus仓库才有的jar包, 首先从本地.m2仓库查找 -->
         <!-- ———————————————————————— 下面的依赖是来自本地nexus仓库 BEGIN————————————————————————  -->
-        <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>nexus-deploy</artifactId>
-            <version>0.0.1-20181025.102620-1</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.example</groupId>-->
+            <!--<artifactId>nexus-deploy</artifactId>-->
+            <!--<version>0.0.1-20181025.102620-1</version>-->
+        <!--</dependency>-->
         <!-- ———————————————————————— 下面的依赖是来自本地nexus仓库 END ————————————————————————  -->
 
         <dependency>

@@ -1,28 +1,17 @@
 package javacore.equals;
 
 /**
- * Created by mac on 17/7/20.
+ * Created By
+ *
+ * @author :   zhangj
+ * @date :   2019-03-14
  */
-public class Test {
+public class StringEqualsTest {
     public static void main(String[] args) {
-
-        Employee employee1 = new Employee("employee1", 10000);
-        Employee employee2 = employee1;
-        Employee employee3 = new Employee("employee3", 8000);
-        Employee employee4 = new Employee("employee1", 10000);
-        System.out.println("employee1 == employee2 is " + (employee1 == employee2));
-        System.out.println("employee1 == employee3 is " + (employee1 == employee3));
-        System.out.println("employee1 == employee4 is " + (employee1 == employee4));
-        System.out.println("employee1.equals(employee4) is " + (employee1.equals(employee4)));
-
-        System.out.println(employee1.hashCode());
-        System.out.println(employee2.hashCode());
-        System.out.println(employee3.hashCode());
-        System.out.println(employee4.hashCode());
-
         // --------------------- String (本身重写了equals) ---------------------
         String str1 = "Hello"; // 堆-方法区-常量区
         String str2 = "Hello";
+        // 这里创建了两个对象, 首先Hello在编译期间, 放入常量池, 然后才在堆上分配内存, 栈内存指向该地址
         String str3 = new String("Hello");
         String str4 = str2;
 
@@ -40,6 +29,13 @@ public class Test {
         System.out.println("str1 == str3 is " + (str1 == str3)); // false
 
 
-    }
+        // --------------------- String 变量拼接的时候, 会在堆内存创建, 而不是常量区 ---------------------
+        String a = "a";
+        String b = "b";
+        String c = "ab";
+        String d = a + b;
+        System.out.println(c == d);
+        System.out.println(c.equals(d));
 
+    }
 }

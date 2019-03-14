@@ -1,7 +1,9 @@
 package javacore.map;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created By
@@ -21,15 +23,36 @@ public class HashMapTest {
         hashMap.put("b", "2");
         hashMap.put("c", "3");
 
+        // 获取Map中的所有键
         for (String key : hashMap.keySet()) {
-            System.out.println(key.toString());
+            System.out.print(key.toString() + " ");
         }
+        System.out.println();
 
+        // 获取Map中所有值
         for (String value : hashMap.values()) {
-            System.out.println(value);
+            System.out.print(value + " ");
         }
+        System.out.println();
+
+        // 获取Map中所有值2
+        Collection<String> stringCollections = hashMap.values();
+        for (String value : stringCollections) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+
+
+        // 得到key的值的同时得到key所对应的值1: 直接返回entry
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
+
+        // 得到key的值的同时得到key所对应的值2: 通过key来获取
+        Set<String> keySet = hashMap.keySet();
+        for (String key : keySet) {
+            System.out.println("key:" + key + ",value:" + hashMap.get(key));
+        }
+
     }
 }
