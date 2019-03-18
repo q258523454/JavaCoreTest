@@ -3,7 +3,6 @@ package javacore.map;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 /**
  * Created By
@@ -43,16 +42,21 @@ public class HashMapTest {
         System.out.println();
 
 
-        // 得到key的值的同时得到key所对应的值1: 直接返回entry
+        // 得到key的值的同时得到key所对应的值(方法一): 直接返回entry
         for (Map.Entry<String, String> entry : hashMap.entrySet()) {
             System.out.println(entry.getKey() + "-" + entry.getValue());
         }
 
-        // 得到key的值的同时得到key所对应的值2: 通过key来获取
-        Set<String> keySet = hashMap.keySet();
-        for (String key : keySet) {
-            System.out.println("key:" + key + ",value:" + hashMap.get(key));
-        }
+        // 得到key的值的同时得到key所对应的值(方法二): 直接返回entry
+        hashMap.forEach((key, value) -> {
+            System.out.println(key + "-" + value);
+        });
+
+        // 得到key的值的同时得到key所对应的值(方法三): 通过key来获取(不推荐)
+//        Set<String> keySet = hashMap.keySet();
+//        for (String key : keySet) {
+//            System.out.println("key:" + key + ",value:" + hashMap.get(key));
+//        }
 
     }
 }
