@@ -1,8 +1,8 @@
-package designmode.simplefactory;
+package designmode.factory.simplefactory;
 
-import designmode.simplefactory.entity.Audi;
-import designmode.simplefactory.entity.Bwm;
-import designmode.simplefactory.entity.Car;
+import designmode.factory.simplefactory.entity.Audi;
+import designmode.factory.simplefactory.entity.Bwm;
+import designmode.factory.simplefactory.entity.Car;
 
 /**
  * Created By

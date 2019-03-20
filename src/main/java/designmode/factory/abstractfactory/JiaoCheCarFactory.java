@@ -1,9 +1,8 @@
-package designmode.abstractfactory;
+package designmode.factory.abstractfactory;
 
-import designmode.abstractfactory.entity.AudiJiaoche;
-import designmode.abstractfactory.entity.AudiYueye;
-import designmode.abstractfactory.entity.BwmJiaoche;
-import designmode.abstractfactory.entity.Car;
+import designmode.factory.abstractfactory.entity.AudiJiaoche;
+import designmode.factory.abstractfactory.entity.BwmJiaoche;
+import designmode.factory.abstractfactory.entity.Car;
 
 /**
  * Created By

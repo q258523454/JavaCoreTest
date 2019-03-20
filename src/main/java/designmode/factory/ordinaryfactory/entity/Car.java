@@ -1,4 +1,4 @@
-package designmode.simplefactory.entity;
+package designmode.factory.ordinaryfactory.entity;
 
 /**
  * Created By

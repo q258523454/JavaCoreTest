@@ -1,7 +1,6 @@
-package designmode.abstractfactory;
+package designmode.factory.abstractfactory;
 
-import designmode.abstractfactory.entity.Audi;
-import designmode.abstractfactory.entity.Car;
+import designmode.factory.abstractfactory.entity.Car;
 
 /**
  * Created By

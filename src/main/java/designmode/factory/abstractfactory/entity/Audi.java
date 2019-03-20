@@ -1,4 +1,4 @@
-package designmode.simplefactory.entity;
+package designmode.factory.abstractfactory.entity;
 
 /**
  * Created By
@@ -6,7 +6,7 @@ package designmode.simplefactory.entity;
  * @author :   zhangj
  * @date :   2019-03-19
  */
-public class Audi implements Car {
+public abstract class Audi extends Car {
 
     public Audi() {
         System.out.println("奥迪");

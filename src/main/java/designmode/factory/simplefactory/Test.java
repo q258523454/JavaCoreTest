@@ -1,6 +1,6 @@
-package designmode.simplefactory;
+package designmode.factory.simplefactory;
 
-import designmode.simplefactory.entity.Car;
+import designmode.factory.simplefactory.entity.Car;
 
 /**
  * Created By

@@ -1,4 +1,4 @@
-package designmode.factory.entity;
+package designmode.factory.abstractfactory.entity;
 
 /**
  * Created By
@@ -6,7 +6,7 @@ package designmode.factory.entity;
  * @author :   zhangj
  * @date :   2019-03-19
  */
-public class Bwm implements Car {
+public abstract class Bwm extends Car {
 
     public Bwm() {
         System.out.println("宝马");
