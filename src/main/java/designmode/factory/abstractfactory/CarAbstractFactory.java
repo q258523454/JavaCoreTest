@@ -9,7 +9,7 @@ import designmode.factory.abstractfactory.entity.Car;
  * @date :   2019-03-19
  */
 public interface CarAbstractFactory {
-    public Car createBwm();
+    Car createBwm();
 
-    public Car createAudi();
+    Car createAudi();
 }
