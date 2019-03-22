@@ -16,6 +16,6 @@ public class Test {
 
         Ps2 ps2 = new Adapter(new UsbImpl());
         ps2.printPs2();
-        
+
     }
 }
