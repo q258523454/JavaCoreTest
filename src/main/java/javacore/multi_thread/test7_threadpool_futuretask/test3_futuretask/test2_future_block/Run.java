@@ -1,4 +1,4 @@
-package javacore.multi_thread.test7_threadpool_futuretask.test3_futuretask.threadPoolTimeOut_Block;
+package javacore.multi_thread.test7_threadpool_futuretask.test3_futuretask.test2_future_block;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
