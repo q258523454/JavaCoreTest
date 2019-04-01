@@ -49,7 +49,7 @@ public class Test {
         pen.setColor("红色");
         System.out.println(JSONObject.toJSONString(student1));
         System.out.println(JSONObject.toJSONString(student2));
-        System.out.println("bag是否指向同一个:" + (student1.getBag() == student2.getBag()));
+        System.out.println("pen是否指向同一个:" + (student1.getBag().getPen() == student2.getBag().getPen()));
 
 
     }
