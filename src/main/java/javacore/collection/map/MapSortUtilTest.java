@@ -1,8 +1,8 @@
-package javacore.map.mapSort;
+package javacore.collection.map;
 
 import java.util.*;
 
-public class MapUtilTest {
+public class MapSortUtilTest {
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<K, V>>() {
@@ -31,7 +31,7 @@ public class MapUtilTest {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
         System.out.println("排序后:");
-        map = MapUtilTest.sortByValue(map);
+        map = MapSortUtilTest.sortByValue(map);
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
