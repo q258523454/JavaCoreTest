@@ -12,9 +12,9 @@ import designmode.proxy.staticproxy.impl.BikeImpl;
 public class BikeProxy implements BikeInterface {
 
 
-    private BikeImpl bike;
+    private BikeInterface bike;
 
-    public BikeProxy(BikeImpl bike) {
+    public BikeProxy(BikeInterface bike) {
         this.bike = bike;
     }
 

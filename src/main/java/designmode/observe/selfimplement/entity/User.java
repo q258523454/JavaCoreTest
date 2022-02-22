@@ -1,7 +1,6 @@
 package designmode.observe.selfimplement.entity;
 
-import designmode.observe.selfimplement.Observer;
-import designmode.observe.selfimplement.Observerable;
+import designmode.observe.selfimplement.Reader;
 
 /**
  * Created By
@@ -9,24 +8,19 @@ import designmode.observe.selfimplement.Observerable;
  * @author :   zhangj
  * @date :   2019-03-21
  */
-public class User implements Observer {
-
+public class User implements Reader {
 
     private String name;
 
     private String message;
 
-    private Observerable server;
-
-
     public User(String name) {
         this.name = name;
     }
 
-    public User(String name, WechatServer server) {
+    public User(String name, BookServer server) {
         this.name = name;
         server.addObserver(this); // 被观察者默认加入到服务器
-
     }
 
     @Override

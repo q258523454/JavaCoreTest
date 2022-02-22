@@ -25,5 +25,3 @@ hs_err_pid*
 .idea/
 target/
 /src/main/java/javacore/Test.java
-/src/main/java/javacore/Test2.java
-/src/main/java/javacore/Test3.java

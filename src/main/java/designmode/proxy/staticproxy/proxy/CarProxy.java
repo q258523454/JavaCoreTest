@@ -11,10 +11,10 @@ import designmode.proxy.staticproxy.impl.CarImpl;
  */
 public class CarProxy implements CarInterface {
 
-    private CarImpl bwm;
+    private CarInterface bwm;
 
     // 既然是代理, 那就必须获取对象
-    public CarProxy(CarImpl bwm) {
+    public CarProxy(CarInterface bwm) {
         this.bwm = bwm;
     }
 

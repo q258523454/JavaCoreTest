@@ -1,0 +1,22 @@
+package javacore.base.copy_deep_shallow.test1_shallowcopy.entity;
+
+import lombok.Data;
+
+/**
+ * Created By
+ *
+ * @author :   zhangj
+ * @date :   2019-03-29
+ */
+
+@Data
+public class Student implements Cloneable {
+    private String name;
+    private int age;
+    private Bag bag;
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+}

@@ -1,0 +1,32 @@
+
+掌握:
+单例、工厂、建造者、适配器、模板、外观
+
+1.单例 (Singleton)
+2.工厂 (Factory) - IOC
+
+代理 (Proxy) - AOP
+策略 (Strategy)
+适配器 (Adaptor)
+装饰者 (Decorator/Wrapper)
+外观 (Facade), 门面模式
+模板 (Template)
+建造者 (Builder)
+职责链 (Chain)
+状态 (state)
+观察者 (Observe)
+
+
+
+
+1.简单工厂
+2.抽象工厂
+3.单例
+4.适配器
+5.装饰者
+6.代理
+7.观察者模式
+8.策略模式
+9.模版方法模式
+
+

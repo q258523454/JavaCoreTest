@@ -1,11 +1,19 @@
- <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>www.JavaCoreTest</groupId>
-    <artifactId>JavaCoreTest-javaTest</artifactId>
+    <artifactId>JavaCoreTest</artifactId>
     <packaging>jar</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>JavaCoreTest</name>
+
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.4.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -14,39 +22,19 @@
         <activiti.version>5.16.3</activiti.version>
     </properties>
 
-
-    <!-- 指定局域网nexus仓库 -->
-    <repositories>
-        <repository>
-            <id>maven-central</id>
-            <name>maven-central</name>
-            <!-- 配置的时候maven-public是group类型,包括了maven-central,maven-snapshots,maven-releases -->
-            <url>http://192.168.6.244:8888/repository/maven-public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.1.5.RELEASE</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <!-- 2.下载在局域网nexus仓库才有的jar包, 首先从本地.m2仓库查找 -->
         <!-- ———————————————————————— 下面的依赖是来自本地nexus仓库 BEGIN————————————————————————  -->
         <!--<dependency>-->
-            <!--<groupId>com.example</groupId>-->
-            <!--<artifactId>nexus-deploy</artifactId>-->
-            <!--<version>0.0.1-20181025.102620-1</version>-->
+        <!--<groupId>com.example</groupId>-->
+        <!--<artifactId>nexus-deploy</artifactId>-->
+        <!--<version>0.0.1-20181025.102620-1</version>-->
         <!--</dependency>-->
         <!-- ———————————————————————— 下面的依赖是来自本地nexus仓库 END ————————————————————————  -->
 
@@ -58,7 +46,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>6.0.6</version>
+            <version>8.0.13</version>
         </dependency>
 
         <!-- logback BEGIN -->
@@ -79,10 +67,86 @@
         </dependency>
         <!-- logback END -->
 
+        <!-- Google guava END -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>30.1.1-jre</version>
+        </dependency>
+        <!-- Google guava END -->
+
         <dependency>
             <groupId>javax.mail</groupId>
             <artifactId>mail</artifactId>
             <version>1.4.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.20</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.3</version>
+        </dependency>
+
+        <!-- —————————————— jackson BEGIN——————————————-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.11.1</version>
+        </dependency>
+        <!-- —————————————— jackson END ——————————————-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.8</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.10</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.directory.studio</groupId>
+            <artifactId>org.dom4j.dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ibm.icu</groupId>
+            <artifactId>icu4j</artifactId>
+            <version>69.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.7.3</version>
         </dependency>
 
     </dependencies>
@@ -108,7 +172,7 @@
                             <!-- 配置主程序 java -jar 默认Class -->
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>javacore.enumtest.Test</mainClass>
+                            <mainClass>javacore.base.t3_enums.Test</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -135,7 +199,7 @@
                             <!-- 配置主程序 java -jar 默认Class -->
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>javacore.enumtest.Test</mainClass>
+                            <mainClass>javacore.base.t3_enums.Test</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
