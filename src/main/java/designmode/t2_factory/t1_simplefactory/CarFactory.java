@@ -12,7 +12,6 @@ import designmode.t2_factory.t1_simplefactory.entity.Car;
  */
 public class CarFactory {
 
-    // 简单工厂模式: 一
     public static Car createCar(String carName) {
         if ("Bwm".equals(carName)) {
             return new Bwm();

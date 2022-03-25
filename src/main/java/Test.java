@@ -1,26 +1,33 @@
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
-import util.StringUtil;
+import java.io.Serializable;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.concurrent.BlockingQueue;
+public class Test implements Serializable {
 
-@Slf4j
-public class Test {
+    String a;
+    private String b;
+    public String c;
+    protected String d;
+    public final String f = "123";
 
-    public static void main(String[] args) {
-        test(null);
+
+    static String a2;
+    static private String b2;
+    static public String c2;
+    static protected String d2;
+
+    void test1() {
 
     }
 
-    public static void test(String a) {
-        System.out.println(a);
-        assert a != null : "123";
-        System.out.println(a);
+    private void test2() {
+
     }
 
+    public void test3() {
+
+    }
+
+    protected void test4() {
+
+    }
 
 }

@@ -16,7 +16,6 @@ public enum MapUtil {
      * @param map
      * @param <K>
      * @param <V>
-     * @return
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValueAsc(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());
@@ -34,7 +33,6 @@ public enum MapUtil {
      * @param map
      * @param <K>
      * @param <V>
-     * @return
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValueDesc(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());

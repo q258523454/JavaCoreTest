@@ -1,0 +1,135 @@
+
+招银网络招聘
+
+-self-introduction
+  -Blog,Github,Intellij,公众号等影响力
+  -项目亮点和沉淀
+
+-基础
+  -设计模式
+    -设计原则
+    -常见设计模式
+  -算法和数据结构
+    -动态规划
+    -常用数据结构
+    -高频必会(反转链表、链表中间节点)
+
+-技术栈
+  -Java
+    -JVM
+      -内存模型
+      -GC算法和优化方法
+      -JVM逃逸分析
+      -类的对象头一般都包括什么
+      -new Object()JVM做了哪些操作
+      -JVM调优方法
+      -反射和代理
+        -反射原理,如何实现反射调用
+        -代理原理,如何代理一个类
+    -JDK
+      -1.8特性: Lambda,Functional接口,Optionals,Stream
+      -StringBuffer,StringBuild: 区别
+      -ArrayList,LinkedList: 底层结构,扩容机制,效率
+      -HashMap: 1.7vs1.8,原理,扩容2^n-1原因,是否线程安全,hashtable关系.
+      -ThreadLocal:脏数据,内存泄漏,WeakRefference作用.
+    -JUC
+      -Volatile: 作用,场景,何时指令重排?
+      -Syncronized: 原理,jvm层锁还是JDK层锁(是jvm),锁升级(偏向锁,轻量锁,重量锁),悲观锁or乐观锁,上锁是否可中断
+      -----------------------------------------------------------
+      -CAS:CAS的实现AtomicInteger,CAS原理,ABA问题
+      -AQS:抽象队列同步框架,Reentranlock\CountDownLatch\CyclicBarrier\Semaphore都基于该框架,衍生物:自旋,互斥,信号量
+      -Lock:jvm层锁还是JDK层锁(jdk),悲观锁or乐观锁,是否可重入
+      -Reentranlock:与lock关系,上锁是否可中断
+      -LockSupport:作用和原理
+
+    -多线程
+      -线程池种类,各个参数配置意义
+      -线程顺序执行的实现方式
+
+  -框架
+    -Spring,SpringBoot
+      -Bean的生命周期
+      -Bean的定义包括哪些信息
+      -事务有哪些隔离级别
+      -bean循环依赖解决,为什么用到三级缓存,只用二级可以吗?
+    -SpringCloud
+      -什么是熔断
+      -什么是降级
+    -Mybatis
+      -接口执行XML中的SQL,实现原理?
+      -session管理
+      -一级缓存,二级缓存
+
+  -数据库
+    -mysql
+      -索引: 聚簇索引vs非聚簇索引
+      -锁: 行锁,表锁,MVCC
+      -事务:隔离级别以及导致的问题
+      -日志:redo,undo,bin log, 慢SQL日志
+      -InnoDB vs MyISAM
+      -B+,B
+
+  -中间件
+    -Dubbo: 和SpringCloud区别,支持协议,常用协议,超时断开如何处理
+    -MQ: RabbitMQ
+    -ES:搜索过程
+    -Redis:
+      -常用数据结构
+      -淘汰策略
+      -数据安全:RDB vs AOF
+      -Redis集群高可用原理
+      -redis同步机制
+      -穿透,雪崩,降级,双写一致
+
+  -架构
+    -分布式系统
+      -服务治理:负载均衡,熔断降级,限流
+      -分布式事务: TCC,XA
+      -分布式id:雪花,redis,zk
+      -监控设计:TPS,QPS,异常
+    -数据库设计
+      -分库分表:水平,垂直
+      -索引设计:单列索引vs联合索引
+
+  -工具
+    -Maven
+      -同名依赖优先原则
+    -Jmeter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

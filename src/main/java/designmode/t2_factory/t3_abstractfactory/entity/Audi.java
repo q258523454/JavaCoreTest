@@ -11,9 +11,4 @@ public abstract class Audi extends Car {
     public Audi() {
         System.out.println("奥迪");
     }
-
-    @Override
-    public void drive() {
-        System.out.println("Drive Audi");
-    }
 }

@@ -8,7 +8,8 @@ package designmode.t2_factory.t3_abstractfactory.entity;
  */
 public class BwmJiaoche extends Bwm {
     @Override
-    public void printCarType() {
+    public void drive() {
         System.out.println("宝马-轿车类型");
+
     }
 }

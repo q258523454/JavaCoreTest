@@ -11,9 +11,4 @@ public abstract class Bwm extends Car {
     public Bwm() {
         System.out.println("宝马");
     }
-
-    @Override
-    public void drive() {
-        System.out.println("Drive Bwm");
-    }
 }
