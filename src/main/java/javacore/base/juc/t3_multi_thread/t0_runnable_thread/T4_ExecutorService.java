@@ -16,7 +16,7 @@ public class T4_ExecutorService {
         /**
          * 线程池不允许使用Executors去创建,而是通过ThreadPoolExecutor的方式,规避资源耗尽的风险。
          * 说明:Executors返回的线程池对象的弊端如下:
-         *   1）FixedThreadPool和SingleThreadPool:
+         *   1）FixedThreadPool 和 SingleThreadPool:
          *     允许的请求队列长度为Integer.MAX_VALUE,可能会堆积大量的请求,从而导致OOM。
          *   2）CachedThreadPool:
          *     允许的创建线程数量为Integer.MAX_VALUE,可能会创建大量的线程,从而导致OOM。
@@ -66,13 +66,20 @@ public class T4_ExecutorService {
          */
 
 
-        ExecutorService executor = new ThreadPoolExecutor(5, 200, 2, TimeUnit.SECONDS,
+        ExecutorService executorService = new ThreadPoolExecutor(5, 200, 2, TimeUnit.SECONDS,
                 new LinkedBlockingQueue<Runnable>(1024),
                 new ThreadFactoryImpl("T4_ExecutorService"));
 
         T3_OnlyRunnable runnable = new T3_OnlyRunnable();
-        executor.execute(runnable);
-        executor.shutdown();
+        executorService.execute(runnable);
+
+        // 停止接受新任务,当已有任务将执行完,关闭线程池
+        executorService.shutdown();
+
+        // 等待线程池中所有的任务执行完成, 前提是执行了 shutdown
+        while (!executorService.isTerminated()) {
+            // 等待所有线程执行完成
+        }
         log.info("结束");
     }
 }
