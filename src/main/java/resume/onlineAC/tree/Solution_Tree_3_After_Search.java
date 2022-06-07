@@ -1,10 +1,12 @@
-package resume.question.shopee;
+package resume.onlineAC.tree;
 
 import com.alibaba.fastjson.JSON;
 import resume.swordoffer66.base.TreeNode;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
 /**
@@ -17,12 +19,15 @@ import java.util.Stack;
  *     9
  * 中序遍历: 4,2,9,6,5,7,1,3
  */
-public class Solution_Tree_2_Middle_Search {
+public class Solution_Tree_3_After_Search {
 
 
     private Stack<TreeNode> stack = new Stack<>();
 
     private List<Integer> middleList = new ArrayList<>();
+
+    private Set<TreeNode> logicDeleteSet = new HashSet<>();
+
 
     public void middleSearch(TreeNode treeNode) {
         TreeNode head = treeNode;
@@ -50,10 +55,20 @@ public class Solution_Tree_2_Middle_Search {
      */
     public void popStack() {
         if (!stack.isEmpty()) {
-            TreeNode pop = stack.pop();
-            // 中序遍历: 注意 middleList.add 位置
-            middleList.add(pop.val);
-            if (null != pop.right) {
+            TreeNode pop = stack.peek();
+            // 已经访问过
+            if (logicDeleteSet.contains(pop)) {
+                middleList.add(pop.val);
+                stack.pop();
+                return;
+            }
+
+            // 无右节点
+            if (null == pop.right) {
+                middleList.add(pop.val);
+                stack.pop();
+            } else {
+                logicDeleteSet.add(pop);
                 pushStack(pop.right);
             }
         }
@@ -61,7 +76,8 @@ public class Solution_Tree_2_Middle_Search {
 
     public static void main(String[] args) {
         TreeNode treeNode = TreeNode.getTree(new int[]{1, 2, 3, 4, 5, 0, 0, 0, 0, 6, 7, 0, 0, 0, 0});
-        Solution_Tree_2_Middle_Search solution = new Solution_Tree_2_Middle_Search();
+        // TreeNode treeNode = TreeNode.getTree(new int[]{1, 2, 3});
+        Solution_Tree_3_After_Search solution = new Solution_Tree_3_After_Search();
         solution.middleSearch(treeNode);
         System.out.println(JSON.toJSONString(solution.middleList));
     }
