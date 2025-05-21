@@ -3,13 +3,14 @@ package javacore.jdk18.stream;
 import com.alibaba.fastjson.JSON;
 
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
 /***
  * 流操作类型:
- * Intermediate：一个流可以后面跟随零个或多个 intermediate 操作。其目的主要是打开流，做出某种程度的数据映射/过滤，然后返回一个新的流，
+ * Intermediate：一个流可以后面跟随零个或多个聚合操作(intermediate operation)。其目的主要是打开流，做出某种程度的数据映射/过滤，然后返回一个新的流，
  *              交给下一个操作使用。这类操作都是惰性化的（lazy），就是说，仅仅调用到这类方法，并没有真正开始流的遍历。
  *
  * Terminal：一个流只能有一个 terminal 操作，当这个操作执行后，流就被使用“光”了，无法再被操作。所以这必定是流的最后一个操作。
@@ -17,9 +18,11 @@ import java.util.stream.Stream;
  *
  * 常用的聚合操作:
  * Intermediate[聚合操作——中间]：
- *          map(mapToInt, flatMap 等), filter, distinct, sorted, peek, limit, skip, parallel, sequential, unordered
+ *          map(mapToInt, flatMap 等), filter, distinct, sorted, peek, limit, skip, parallel, sequential,
+ *          unordered
  * Terminal[聚合操作——终结]：
- *          forEach, forEachOrdered, toArray, reduce, collect, min, max, count, anyMatch, allMatch, noneMatch, findFirst, findAny, iterator
+ *          forEach, forEachOrdered, toArray, reduce, collect, min, max, count, anyMatch, allMatch,
+ *          noneMatch, findFirst, findAny, iterator
  * Short-circuiting[聚合操作——短路]：
  *          anyMatch, allMatch, noneMatch, findFirst, findAny, limit
  */
@@ -36,7 +39,7 @@ public class RunTest {
 
         // filter 操作
         stringList = Arrays.asList("a", "b", "", "c");
-        long emptyCount = stringList.stream().filter(s -> s.isEmpty()).count();
+        long emptyCount = stringList.stream().filter(String::isEmpty).count();
         System.out.println("空字符串个数:" + emptyCount);
 
         // sorted 操作
@@ -83,6 +86,5 @@ public class RunTest {
         stringList = Arrays.asList("a", "b", "", "c");
         System.out.println(stringList.stream().anyMatch(s -> s.equals("a")));
         System.out.println(stringList.stream().allMatch(s -> s.contains("c")));
-
     }
 }

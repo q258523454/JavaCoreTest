@@ -1,6 +1,8 @@
 package util;
 
 import com.ibm.icu.text.Transliterator;
+
+import org.apache.commons.codec.binary.Hex;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.nio.charset.Charset;
@@ -80,9 +82,9 @@ public enum StringUtil {
      * 按字节长度截取字符串(指定字符编码)
      * 避免出现半个字符, 必须向下取整, 因此截取后对应的byte[]可能小于目标字节数。
      *
-     * @param s             字符串
-     * @param byteLength    目标长度（字节数）
-     * @param charset       截取后的字符串
+     * @param s          字符串
+     * @param byteLength 目标长度（字节数）
+     * @param charset    截取后的字符串
      * @return String
      */
     public static String cut(String s, int byteLength, Charset charset) {
@@ -145,6 +147,18 @@ public enum StringUtil {
             text = text.substring(0, 1).toUpperCase() + text.substring(1);
         }
         return text;
+    }
+
+    /**
+     * 字符串转换成16进制byte
+     */
+    public static byte[] toHex(String str) {
+        try {
+            // 使用 Hex.decodeHex 方法将十六进制字符串转换为字节数组
+            return Hex.decodeHex(str.toCharArray());
+        } catch (Exception e) {
+            throw new IllegalArgumentException("输入的字符串不是有效的十六进制字符串", e);
+        }
     }
 
     public static void main(String[] args) {

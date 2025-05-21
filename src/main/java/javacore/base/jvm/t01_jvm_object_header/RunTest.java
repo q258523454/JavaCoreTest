@@ -3,6 +3,25 @@ package javacore.base.jvm.t01_jvm_object_header;
 import org.openjdk.jol.info.ClassLayout;
 
 public class RunTest {
+
+    // 2 字节
+    private char c;
+
+    // 4 字节
+    private int i;
+    // 2 字节
+    private short s;
+    // 8 字节
+    private long l;
+
+    // 4 字节
+    private float f;
+    // 8 字节
+    private double d;
+
+    // 4 字节
+    private long[] arr;
+
     public static void main(String[] args) {
         /**
          * 参考: https://blog.csdn.net/zwx900102/article/details/108108555
@@ -39,5 +58,6 @@ public class RunTest {
          */
         Student obj = new Student();
         System.out.println(ClassLayout.parseInstance(obj).toPrintable());
+        System.out.println(ClassLayout.parseInstance(new RunTest()).toPrintable());
     }
 }

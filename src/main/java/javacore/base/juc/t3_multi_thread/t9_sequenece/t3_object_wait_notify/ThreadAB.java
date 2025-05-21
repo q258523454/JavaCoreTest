@@ -43,7 +43,8 @@ public class ThreadAB {
             synchronized (this) {
                 try {
                     log.info("B线程等待A线程 doing");
-                    // wait()的执行前提是当前线程获取了对象控制权,否则会报错:java.lang.IllegalMonitorStateException
+                    // wait()的执行前提是当前线程获取了对象控制权
+                    // 否则会报错:java.lang.IllegalMonitorStateException
                     this.wait();
                     log.info("B线程等待A线程 done");
                 } catch (InterruptedException e) {
@@ -62,7 +63,8 @@ public class ThreadAB {
         @Override
         public void run() {
             synchronized (obj) {
-                // notify()不会立马释放对象锁,释放情景: 1.synchronized代码块执行完成; 2.主动释放 wait();
+                // notify()不会立马释放对象锁
+                // 释放情景: 1.synchronized代码块执行完成; 2.主动释放 wait();
                 obj.notify();
                 log.info("A线程开始执行.");
                 log.info("A线程执行完成.");

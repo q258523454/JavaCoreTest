@@ -23,5 +23,5 @@
   任务队列主要有4种拒绝策略：
   AbortPolicy(默认)：直接丢弃任务，抛出异常
   DiscardPolicy：直接丢弃任务，也不抛出异常
-  CallerRunsPolicy：只用调用者所在的线程来处理任务
+  CallerRunsPolicy：只用调用者所在的线程来处理任务,表现为当前页面被阻塞住了，直到当前调用者所在的线程执行完毕
   DiscardOldestPolicy：丢弃等待队列中最旧的任务，并执行当前任务

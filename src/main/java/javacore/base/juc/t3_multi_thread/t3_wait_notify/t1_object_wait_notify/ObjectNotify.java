@@ -6,10 +6,10 @@ public class ObjectNotify {
 
     @SneakyThrows
     public static void main(String[] args) {
-        MyRunnable myRunnable = new MyRunnable();
+        final MyRunnable myRunnable = new MyRunnable();
         new Thread(myRunnable).start();
 
-        Thread.sleep(1000);
+        Thread.sleep(2000);
 
         // notify(),wait() 必须获取对象锁,否则会报错:java.lang.IllegalMonitorStateException
         synchronized (myRunnable) {
@@ -24,13 +24,14 @@ public class ObjectNotify {
         public void run() {
             synchronized (this) {
                 try {
-                    System.out.println("Thread run");
+                    System.out.println("Thread run.等待..");
                     // 释放锁资源,进行等待
                     this.wait();
                     System.out.println("Thread stop");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                System.out.println("1111111");
             }
         }
     }

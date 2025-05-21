@@ -13,7 +13,7 @@ public class Student implements Cloneable {
 
     @Override
     public Object clone() throws CloneNotSupportedException {
-        // 只能含有非基本数据类型, 如果有非基本数据类, 那么需要再次递归实现clone
+        // 注意：如果属性含有有非基本数据类, 那么非基本数据类型的数据，也需要递归实现clone
         return super.clone();
     }
 }

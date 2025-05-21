@@ -1,0 +1,97 @@
+swagger: '2.0'
+info:
+  title: ping test
+  version: '1.0'
+host: 'localhost'
+basePath: /test
+schemes:
+  - "https"
+tags:
+  - name: TestManage
+    description: 测试管理
+paths:
+  /test1/path:
+    get:
+      tags:
+        - TestManage
+      operationId: pingGet
+      description: 测试path
+      parameters:
+        - name: myPath
+          in: path
+          description: hierarchyId
+          required: true
+          type: string
+      responses:
+        '201':
+          description: OK
+  /test1/header:
+    post:
+      tags:
+        - TestManage
+      operationId: pingPost
+      description: 测试header
+      parameters:
+        - name: myCookie
+          in: header
+          description: cookie
+          required: false
+          type: string
+      responses:
+        '201':
+          description: OK
+  /test1/formdata:
+    post:
+      tags:
+        - TestManage
+      operationId: pingPost
+      description: 测试formData
+      parameters:
+        - name: myFormData
+          in: formData
+          description: formData
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '201':
+          description: OK
+  /test1/query:
+    post:
+      tags:
+        - TestManage
+      operationId: pingPost
+      description: 测试query
+      parameters:
+        - name: myQuery
+          in: query
+          description: 数量
+          required: true
+          type: integer
+          format: int32
+      responses:
+        '201':
+          description: OK
+  /test1/body:
+    get:
+      tags:
+        - TestManage
+      operationId: pingGet
+      description: 测试body
+      parameters:
+        - in: body
+          name: myBody
+          description: query字段
+          required: true
+          schema:
+            type: object
+            properties:
+              input1:
+                type: string
+                description: 参数1
+              input12:
+                type: boolean
+                description: 参数2
+      responses:
+        '201':
+          description: OK

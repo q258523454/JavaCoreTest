@@ -12,8 +12,8 @@ public class JDBC_Insert_Oracle implements Runnable {
     public void run() {
         String url = "jdbc:oracle:thin:@//55.14.63.174:1521/EA0DB100";
         String name = "oracle.jdbc.driver.OracleDriver";
-        String user = "TEST";
-        String password = "Lj08#123456";
+        String user = "xxx";
+        String password = "xxx";
         Connection conn = null;
         try {
             Class.forName(name);
@@ -35,7 +35,7 @@ public class JDBC_Insert_Oracle implements Runnable {
             PreparedStatement stmt = conn.prepareStatement(sqlTemplate);
             String age = Double.toString(18 + (int) (Math.random() * ((25 - 18) + 1)));
             stmt.setBigDecimal(1, new BigDecimal("99"));
-            stmt.setString(2, "test");
+            stmt.setString(2, "ztest");
             stmt.setBigDecimal(3, new BigDecimal(age));
             stmt.addBatch();
             stmt.executeBatch();

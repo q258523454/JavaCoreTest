@@ -2,27 +2,28 @@ package javacore.base.jvm.t01_classloader;
 
 /**
  * 类加载:加载静态属性(变量)-静态代码块
- *      静态变量赋值为new Class的时候, 相当于实例化加载, 此时如果静态变量未初始化, 用默认值
+ * 静态变量赋值为new Class的时候, 相当于实例化加载, 此时如果静态变量未初始化, 用默认值
  * 实例化:普通属性(变量)-普通造代码块-构造函数
  */
 public class InitSequence2 {
 
     // 第1个加载
-    public static int kk = 0;
+    public static int staticNum1 = 0;
 
     /**
      * 第2个加载，因为是new一个实例
-     * 首先初始化jj,打印   1:jj ii=0 nn=0
-     * 执行构造块,打印     2:构造快 ii=1 nn=1
-     * 执行构造方法,打印    3:t1 ii=2 nn=2
+     * print()函数:str：普通属性 A, staticNum1=1,staticNum2=1,staticNum99=1
+     * print()函数:str：普通代码快, staticNum1=2,staticNum2=2,staticNum99=2
+     * InitSequence2()构造函数:str：静态属性t1, staticNum1=3,staticNum2=3,staticNum99=3
      */
-    public static InitSequence2 t1 = new InitSequence2("t1");
+    public static InitSequence2 t1 = new InitSequence2("静态属性1-调用构造函数");
 
 
     /**
-     * 第3个加载 (之前的nn是默认值0, 现在被初始化赋值=99)
+     * 第3个加载
+     * 此时 staticNum99不再使用默认值, 初始化为:99
      */
-    public static int nn = 99;
+    public static int staticNum99 = 99;
 
 
     /**
@@ -31,23 +32,13 @@ public class InitSequence2 {
      * 执行构造块打印      5:构造快 ii=4 nn=100
      * 执行构造方法打印     6:t2 ii=5 nn=101
      */
-    public static InitSequence2 t2 = new InitSequence2("t2");
+    public static InitSequence2 staticInstance = new InitSequence2("静态属性2-调用构造函数");
 
     /**
      * 第5个加载
-     * 打印出  7:ii ii=6 nn=102 (注意此时ii被初始化成了103)
+     * print()函数:str：static_I, staticNumK=7,staticNumI=7,staticNum99=103
      */
-    public static int ii = print("ii");
-
-
-    /**
-     * 此变量在类加载的时候并不初始化，在实例化类的时候初始化
-     */
-    public int jj = print("jj");
-
-    {
-        print("构造快");
-    }
+    public static int staticNum2 = print("静态属性3");
 
     /**
      * 第6个加载
@@ -56,6 +47,16 @@ public class InitSequence2 {
     static {
         print("静态块");
     }
+
+    /**
+     * 此变量在类加载的时候并不初始化，在实例化类的时候初始化
+     */
+    public int member_A = print("普通属性 A");
+
+    {
+        print("普通代码快");
+    }
+
     //-----------以上属于类加载---------------------
     /**
      * 实例化过程：
@@ -70,19 +71,22 @@ public class InitSequence2 {
      * 执行构造函数  实例化完成
      */
     public InitSequence2(String str) {
-        System.out.println((++kk) + ":" + str + " ii=" + ii + " nn=" + nn);
-        ++nn;
-        ++ii;
+        staticNum1++;
+        staticNum2++;
+        staticNum99++;
+        System.out.println("InitSequence2()构造函数:str：" + str + ", staticNum1=" + staticNum1 + ",staticNum2=" + staticNum2 + ",staticNum99=" + staticNum99);
+
     }
 
     /**
-     * 这个应该是最先加载 但是，加载不等于执行
-     * 因为如果不加载此函数，静态变量是无法初始化的
+     * 静态方法
      */
     public static int print(String str) {
-        System.out.println((++kk) + ":" + str + " ii=" + ii + " nn=" + nn);
-        ++ii;
-        return ++nn;
+        staticNum1++;
+        staticNum2++;
+        staticNum99++;
+        System.out.println("print()函数:str：" + str + ", staticNum1=" + staticNum1 + ",staticNum2=" + staticNum2 + ",staticNum99=" + staticNum99);
+        return staticNum99;
     }
 
     public static void main(String[] args) {

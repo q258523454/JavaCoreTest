@@ -17,22 +17,33 @@ public enum DateUtil {
     /**
      * 格式 yyyyMMdd
      */
-    private static final DateTimeFormatter ymd = DateTimeFormatter.ofPattern("yyyyMMdd");
+    public static final DateTimeFormatter YMD = DateTimeFormatter.ofPattern("yyyyMMdd");
+
 
     /**
      * 格式 yyyyMMddHHmmss
      */
-    private static final DateTimeFormatter ymdHms = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+    public static final DateTimeFormatter YMDHMS = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+
+    /**
+     * 格式 yyyy-MM-dd HH:mm:ss
+     */
+    public static final DateTimeFormatter YMD_HMS = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     /**
      * 格式 yyyyMMddHHmmssSSS
      */
-    public static final DateTimeFormatter ymdHmsSSS = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
+    public static final DateTimeFormatter YMD_HMS_SSS = DateTimeFormatter.ofPattern("yyyyMMddHHmmssSSS");
 
     /**
      * 格式 MMddHHmmssSSS
      */
-    private static final DateTimeFormatter mdHmsSSS = DateTimeFormatter.ofPattern("MMddHHmmssSSS");
+    public static final DateTimeFormatter MD_HMS_SSS = DateTimeFormatter.ofPattern("MMddHHmmssSSS");
+
+    /**
+     * 格式 MMddHHmmssSSS
+     */
+    public static final DateTimeFormatter HMS = DateTimeFormatter.ofPattern("HHmmss");
 
 
     /**
@@ -40,7 +51,7 @@ public enum DateUtil {
      */
     public static String getYmd() {
         LocalDateTime localDateTime = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
-        return localDateTime.format(ymd);
+        return localDateTime.format(YMD);
     }
 
     /**
@@ -48,7 +59,7 @@ public enum DateUtil {
      */
     public static String getYmdHms() {
         LocalDateTime localDateTime = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
-        return localDateTime.format(ymdHms);
+        return localDateTime.format(YMD_HMS);
     }
 
     /**
@@ -56,7 +67,7 @@ public enum DateUtil {
      */
     public static String getYmdHmsSSS() {
         LocalDateTime localDateTime = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
-        return localDateTime.format(ymdHmsSSS);
+        return localDateTime.format(YMD_HMS_SSS);
     }
 
     /**
@@ -64,7 +75,7 @@ public enum DateUtil {
      */
     public static String getmdHmsSSS() {
         LocalDateTime localDateTime = LocalDateTime.now(ZoneId.of("Asia/Shanghai"));
-        return localDateTime.format(mdHmsSSS);
+        return localDateTime.format(MD_HMS_SSS);
     }
 
     /**
@@ -80,7 +91,7 @@ public enum DateUtil {
      * @return
      */
     public static Date ymdToDate(String yyyyMMdd) {
-        LocalDate localDate = LocalDate.parse(yyyyMMdd, ymd);
+        LocalDate localDate = LocalDate.parse(yyyyMMdd, YMD);
         LocalDateTime combine = LocalDateTime.of(localDate, LocalTime.of(0, 0, 0));
         long millis = localDateTimeToLong(combine);
         Date date = new Date(millis);
@@ -93,7 +104,7 @@ public enum DateUtil {
      * @return
      */
     public static Date ymdHmsToDate(String yyyyMMddHHmmss) {
-        LocalDateTime localDateTime = LocalDateTime.parse(yyyyMMddHHmmss, ymdHms);
+        LocalDateTime localDateTime = LocalDateTime.parse(yyyyMMddHHmmss, YMD_HMS);
         long millis = localDateTimeToLong(localDateTime);
         Date date = new Date(millis);
         return date;
@@ -106,7 +117,7 @@ public enum DateUtil {
         long mills = date.getTime();
         ZoneId shanghai = ZoneId.of("Asia/Shanghai");
         LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(mills), shanghai);
-        return localDateTime.format(ymd);
+        return localDateTime.format(YMD);
     }
 
     /**
@@ -116,7 +127,7 @@ public enum DateUtil {
         long mills = date.getTime();
         ZoneId shanghai = ZoneId.of("Asia/Shanghai");
         LocalDateTime localDateTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(mills), shanghai);
-        return localDateTime.format(ymdHms);
+        return localDateTime.format(YMD_HMS);
     }
 
 
@@ -182,8 +193,8 @@ public enum DateUtil {
      * @throws
      */
     public static long bigDecimalBetween(BigDecimal pBigDecimal1, BigDecimal pBigDecimal2) {
-        LocalDate localDate1 = LocalDate.parse(pBigDecimal1.toString(), ymd);
-        LocalDate localDate2 = LocalDate.parse(pBigDecimal2.toString(), ymd);
+        LocalDate localDate1 = LocalDate.parse(pBigDecimal1.toString(), YMD);
+        LocalDate localDate2 = LocalDate.parse(pBigDecimal2.toString(), YMD);
         Duration between = Duration.between(localDate1.atStartOfDay(), localDate2.atStartOfDay());
         long temp = between.toDays();
         return -temp;

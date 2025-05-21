@@ -25,5 +25,6 @@ hs_err_pid*
 .idea/
 target/
 /src/main/java/javacore/Test.java
-
-
+/src/main/java/hw/
+/src/main/java/ApolloUtil.java
+/src/main/resources/swagger/icsl/

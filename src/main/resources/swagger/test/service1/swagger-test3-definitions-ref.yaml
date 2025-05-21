@@ -1,0 +1,28 @@
+swagger: '2.0'
+info:
+  title: ping test
+  version: '1.0'
+host: 'localhost'
+basePath: /test
+schemes:
+  - "https"
+tags:
+  - name: TestManage
+    description: 测试管理
+paths:
+  /test3/definitions/ref:
+    get:
+      tags:
+        - TestManage
+      operationId: pingGet
+      description: 测试ref-definitions
+      parameters:
+        - name: i
+          in: body
+          description: query字段
+          required: true
+          schema:
+            $ref: '../../swagger-reference.yaml#/myObject'
+      responses:
+        '201':
+          description: OK

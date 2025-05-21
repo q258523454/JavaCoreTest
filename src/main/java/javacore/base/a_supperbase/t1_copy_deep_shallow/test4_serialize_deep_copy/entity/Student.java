@@ -1,6 +1,10 @@
 package javacore.base.a_supperbase.t1_copy_deep_shallow.test4_serialize_deep_copy.entity;
 
-import java.io.*;
+import lombok.extern.slf4j.Slf4j;
+
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
 
 /**
  * Created By
@@ -8,6 +12,7 @@ import java.io.*;
  * @author :   zhangj
  * @date :   2019-03-29
  */
+@Slf4j
 public class Student implements Serializable {
 
     private String name;
@@ -38,17 +43,13 @@ public class Student implements Serializable {
         this.bag = bag;
     }
 
-    public Object deepClone() throws IOException, ClassNotFoundException {
-        // 序列化
-        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = new ObjectOutputStream(bos);
-        oos.writeObject(this);
-        oos.close();
-
-        // 反序列化: 分配内存, 写入原始对象, 生成新对象
-        ByteArrayInputStream bis = new ByteArrayInputStream(bos.toByteArray());
-        ObjectInputStream ois = new ObjectInputStream(bis);
-        Object object = ois.readObject();
-        return object;
+    /**
+     * 重点:反序列化注入（漏洞注入）
+     * 这里自定义实现一个 readObject, 执行反序列化的时候, 会首先调用类自己的 readObject()方法，因此这会弹出计算器
+     */
+    private void readObject(ObjectInputStream objectInputStream) throws IOException, ClassNotFoundException {
+        objectInputStream.defaultReadObject();
+        Runtime.getRuntime().exec("calc");
+        log.info("反序列化注入");
     }
 }

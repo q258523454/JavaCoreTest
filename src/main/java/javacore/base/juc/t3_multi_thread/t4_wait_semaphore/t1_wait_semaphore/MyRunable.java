@@ -19,6 +19,7 @@ public class MyRunable implements Runnable {
         try {
             // semaphore 信号量-1,总数为0的时候会等待
             semaphore.acquire();
+            boolean b = semaphore.tryAcquire();
             String name = Thread.currentThread().getName();
             String substring = Thread.currentThread().getName().substring(name.length() - 1, name.length());
             Integer integer = Integer.valueOf(substring);

@@ -12,11 +12,11 @@ public class TryCatchTest {
         System.out.println("---------------------------");
         tryCatchTest1();
         System.out.println("---------------------------");
-        StringBuilder sb = new StringBuilder("test");
+        StringBuilder sb = new StringBuilder("ztest");
         System.out.println(tryCatchReturn1(sb));
         System.out.println(sb);
         System.out.println("---------------------------");
-        sb = new StringBuilder("test");
+        sb = new StringBuilder("ztest");
         System.out.println(tryCatchReturn2(sb));
         System.out.println(sb);
         System.out.println("---------------------------");

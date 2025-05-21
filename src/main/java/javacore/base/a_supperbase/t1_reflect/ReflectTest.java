@@ -1,6 +1,8 @@
 package javacore.base.a_supperbase.t1_reflect;
 
 import com.alibaba.fastjson.JSON;
+
+import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.reflect.Field;
@@ -17,6 +19,7 @@ import java.util.List;
  * @Version 1.0
  */
 
+@Data
 @Slf4j
 public class ReflectTest {
     private String name;
@@ -32,14 +35,12 @@ public class ReflectTest {
     }
 
     public static void main(String[] args) throws NoSuchFieldException {
-
         // 获取所有方法的所有入参
         Method[] methods = ReflectTest.class.getMethods();
         for (Method method : methods) {
-            //
             Type[] genericParameterTypes = method.getGenericParameterTypes();
             for (Type genericParameterType : genericParameterTypes) {
-                log.info("方法:" + method.getName() + " 入参:" + JSON.toJSONString(genericParameterType));
+                log.info("方法:" + method.getName() + " 入参:" + genericParameterType.toString());
             }
         }
 

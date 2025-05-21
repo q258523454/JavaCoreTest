@@ -10,9 +10,10 @@ import lombok.extern.slf4j.Slf4j;
  * @date :   2019-02-27
  */
 @Slf4j
-public class Synchronized_Class_This {
+class Synchronized_Class_This {
     /***
-     * Synchronized
+     * Synchronized - 非公平
+     * 锁升级前:乐观锁, 升级后: 悲观锁、独占锁
      * 原理: 基于 JVM 底层 monitor(Mutex Lock互斥锁) 来进行线程同步实现. 对象monitor=0则获取锁,有锁则+1,退出则-1.是可重入锁.
      *
      * Synchronized上锁方式:

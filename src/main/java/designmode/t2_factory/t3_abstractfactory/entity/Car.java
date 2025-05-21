@@ -8,4 +8,5 @@ package designmode.t2_factory.t3_abstractfactory.entity;
  */
 public abstract class Car {
     public abstract void drive();
+
 }

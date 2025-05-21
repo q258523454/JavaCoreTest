@@ -21,7 +21,7 @@ public class TestCglib {
          *
          * 动态代理:
          * JDK:
-         *  概括: 基于实现
+         *  概括: 面向接口（实现类）
          *  原理: 实现回调接口(InvocationHandler)+反射机制
          *  缺点: 必须实现接口方法.
          *
@@ -32,7 +32,7 @@ public class TestCglib {
          *  注意: 虽然private方法无法通过继承类直接调用,但是 method.setAccessible(true) 可以让 private 方法被执行
          *       extend 是可以继承私有方法和属性的, 只是无法直接调用, 私有属性可以通过get.set方法, 私有方法只能通过 setAccessible
          *       经过测试:
-         *       private,static 都无法被代理.
+         *       private,static 都无法被代理, 但private可以强制执行.
          */
 
         // 创建字节码增强器
@@ -60,7 +60,7 @@ public class TestCglib {
         run.invoke(coffee);
         try {
             Method privateMethod = CoffeeServiceImpl.class.getDeclaredMethod("privateMethod", String.class);
-            privateMethod.invoke(coffee, "test");
+            privateMethod.invoke(coffee, "ztest");
         } catch (Exception ex) {
             log.warn("默认不能代理 private 方法");
         }
@@ -68,12 +68,12 @@ public class TestCglib {
 
     /**
      * 通过 setAccessible(true) 强制执行 private
-     * 注意: 仍然无法代理, 只是执行
+     * 注意:只是执行
      */
     @SneakyThrows
     public static void canPrivate(CoffeeServiceImpl coffee) {
         Method privateMethod = CoffeeServiceImpl.class.getDeclaredMethod("privateMethod", String.class);
         privateMethod.setAccessible(true);
-        privateMethod.invoke(coffee, "test");
+        privateMethod.invoke(coffee, "ztest");
     }
 }

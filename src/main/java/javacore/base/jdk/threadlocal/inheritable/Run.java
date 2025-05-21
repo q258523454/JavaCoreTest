@@ -8,8 +8,8 @@ public class Run {
 
     public static void main(String[] args) {
         try {
-            log.info("在[主线程]中取值 inheritableThreadLocal=" + MyInheritableThreadLocalTest.inheritableThreadLocal.get());
-            log.info("在[主线程]中取值 integerThreadLocal=" + MyInheritableThreadLocalTest.integerThreadLocal.get());
+            log.info("在[主线程]中取值 inheritableThreadLocal=" + MyInheritableThreadLocalTest.InheritableThreadLocal.get());
+            log.info("在[主线程]中取值 integerThreadLocal=" + MyInheritableThreadLocalTest.threadLocal.get());
             Thread.sleep(500);
             // MyInheritableThreadLocalTest 静态变量值会初始化一次, 子类线程 ThreadLocal无法共享内存,因此值是null
             MySubThread t = new MySubThread();

@@ -1,0 +1,40 @@
+swagger: '2.0'
+info:
+  title: ping test0
+  version: '1.0'
+host: 'localhost'
+basePath: /test0
+schemes:
+  - "https"
+tags:
+  - name: TestManage
+    description: 测试管理(本地 definitions)
+paths:
+  /test2/body/definitions:
+    get:
+      tags:
+        - TestManage
+      operationId: pingGet
+      description: 测试本地definitions
+      parameters:
+        - name: i
+          in: body
+          description: query字段(本地 definitions)
+          required: true
+          schema:
+            $ref: '#/definitions/myObject'
+      responses:
+        '201':
+          description: OK
+definitions:
+  myObject:
+    type: object
+    properties:
+      input1:
+        type: string
+        description: 参数1
+      input12:
+        type: boolean
+        description: 参数2
+
+

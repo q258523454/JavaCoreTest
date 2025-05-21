@@ -30,14 +30,14 @@
       -1.8特性: Lambda,Functional接口,Optionals,Stream
       -StringBuffer,StringBuild: 区别
       -ArrayList,LinkedList: 底层结构,扩容机制,效率
-      -HashMap: 1.7vs1.8,原理,扩容2^n-1原因,是否线程安全,hashtable关系.
+      -HashMap: 1.7vs1.8,原理,扩容2^n-1原因,是否线程安全,Hashtable 关系.
       -ThreadLocal:脏数据,内存泄漏,WeakRefference作用.
     -JUC
       -Volatile: 作用,场景,何时指令重排?
       -Synchronized: 原理,jvm层锁还是JDK层锁(是jvm),锁升级(偏向锁,轻量锁,重量锁),悲观锁or乐观锁,上锁是否可中断
       -----------------------------------------------------------
       -CAS:CAS的实现AtomicInteger,CAS原理,ABA问题
-      -AQS:抽象队列同步框架,Reentranlock\CountDownLatch\CyclicBarrier\Semaphore都基于该框架,衍生物:自旋,互斥,信号量
+      -AQS:抽象队列同步框架,ReentrantLock\CountDownLatch\CyclicBarrier\Semaphore都基于该框架,衍生物:自旋,互斥,信号量
       -Lock:jvm层锁还是JDK层锁(jdk),悲观锁or乐观锁,是否可重入
       -Reentranlock:与lock关系,上锁是否可中断
       -LockSupport:作用和原理

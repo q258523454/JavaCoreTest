@@ -22,7 +22,7 @@ public class Run {
             @Override
             public void run() {
                 ExecutorService executorService = Executors.newFixedThreadPool(1);
-                MyRunnable myRunnable = new MyRunnable("test", 1000);
+                MyRunnable myRunnable = new MyRunnable("ztest", 1000);
                 Future<String> future = executorService.submit(myRunnable, "成功");
                 log.info("子线程:开始");
                 try {

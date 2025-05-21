@@ -28,7 +28,7 @@ public class JDBC_Insert_Mysql implements Runnable {
         String url = "jdbc:mysql://localhost:3306/zhang?useSSL=false&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&serverTimezone=GMT%2B8";
         String name = "com.mysql.cj.jdbc.Driver";
         String user = "root";
-        String password = "123456";
+        String password = "xxxxx";
         Connection conn = null;
         try {
             Class.forName(name);

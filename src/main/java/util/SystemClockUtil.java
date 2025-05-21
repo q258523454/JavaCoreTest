@@ -3,25 +3,21 @@ package util;
 import java.sql.Timestamp;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 
-/**
- * @Description
- * @author 张健/80273864
- * @date 2021-07-08 17:01
- * @modify
- */
 public class SystemClockUtil {
-
-
-    /** 时钟更新间隔，单位毫秒 */
+    /**
+     * 时钟更新间隔，单位毫秒
+     */
     private final long period;
-    /** 现在时刻的毫秒数 */
+    /**
+     * 现在时刻的毫秒数
+     */
     private volatile long now;
 
     /**
      * 构造
+     *
      * @param period 时钟更新间隔，单位毫秒
      */
     public SystemClockUtil(long period) {
@@ -53,8 +49,8 @@ public class SystemClockUtil {
 
     /**
      * 单例
-     * @author Looly
      *
+     * @author Looly
      */
     private static class InstanceHolder {
         public static final SystemClockUtil INSTANCE = new SystemClockUtil(1);

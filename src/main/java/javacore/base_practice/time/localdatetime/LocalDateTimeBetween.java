@@ -31,7 +31,6 @@ public class LocalDateTimeBetween {
         LocalDate localDate2 = LocalDate.parse("20100203", ymd);
         Duration between = Duration.between(localDate1.atStartOfDay(), localDate2.atStartOfDay());
         System.out.println(between.toDays());
-
         // --------------------------------------parse & format ----------------------------------
         LocalDateTime p2 = LocalDateTime.parse("20100101162211", ymdHms);
         System.out.println(p2);

@@ -1,6 +1,12 @@
 package javacore.jdk18.optional;
 
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
 import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Date: 2019-07-24
@@ -17,12 +23,33 @@ public class RunTest {
         }
 
         // jdk 1.8
+        String str = "";
+        // 下面代码等价于 Optional.ofNullable(s).orElse("为空")
         Optional<String> os = Optional.ofNullable(s);
         if (os.isPresent()) {
-            System.out.println("不为空");
+            str = "不为空";
         } else {
-            System.out.println("为空");
+            str = "为空";
         }
+        System.out.println(str);
+        System.out.println("s=null, Optional.ofNullable(s).orElse(\"为空\"): "+Optional.ofNullable(s).orElse("为空"));
+
+
+        String test = Optional.ofNullable(getRequest())
+                .map(request -> request.getHeader("ztest"))
+                .get();
+        System.out.println(test);
+
+    }
+
+    public static HttpServletRequest getRequest() {
+        HttpServletRequest request = null;
+        RequestAttributes ra = RequestContextHolder.getRequestAttributes();
+        if (ra != null) {
+            ServletRequestAttributes sra = (ServletRequestAttributes) ra;
+            request = sra.getRequest();
+        }
+        return request;
     }
 
 

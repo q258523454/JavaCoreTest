@@ -6,11 +6,6 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Created by
- *
- * @date :   2018-08-22
- */
 
 
 @Slf4j
@@ -18,8 +13,9 @@ public class Run {
 
     public static void main(String[] args) throws InterruptedException {
 
-        log.info("主线程开始执行");
-        int theadNum = 5;
+        log.info("Main thread start.");
+
+        int theadNum = 3;
         // CountDownLatch 需要将对象传入需要'等待完成'的线程对象中
         CountDownLatch countDownLatch = new CountDownLatch(theadNum);
         ExecutorService executorService = Executors.newFixedThreadPool(theadNum);
@@ -32,12 +28,14 @@ public class Run {
         // 等待所有线程执行完成(线程阻塞)
         countDownLatch.await();
 
-        Thread.sleep(100);
-        log.info("主线程完成等待");
+        log.info("Main thread finish.");
 
+        // 停止接受新任务,当已有任务将执行完,关闭线程池
         executorService.shutdown();
+        // 等待线程池中所有的任务执行完成, 前提是执行了 shutdown
         while (!executorService.isTerminated()) {
+            // 等待所有线程执行完成
         }
-        log.info("结束");
+        log.info("exit");
     }
 }

@@ -1,0 +1,9 @@
+myObject:
+  type: object
+  properties:
+    input1:
+      type: string
+      description: 参数1
+    input12:
+      type: boolean
+      description: 参数2

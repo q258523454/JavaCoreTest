@@ -20,6 +20,7 @@ public class RunTest {
         } catch (Exception e) {
             e.printStackTrace();
 
+            // getConstructors 获取所有的构造函数
             for (Constructor<?> constructor : cls.getConstructors()) {
                 int length = constructor.getGenericParameterTypes().length;
                 Object[] params = new Object[length];

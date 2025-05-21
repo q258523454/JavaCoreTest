@@ -35,4 +35,5 @@ public class Student {
     public void setSkills(List<String> skills) {
         this.skills = skills;
     }
+
 }

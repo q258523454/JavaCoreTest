@@ -1,0 +1,53 @@
+
+重要:
+    1.细心读完所有题;初步判断先后顺序;
+    2.CodeCheck+边界自测
+    3.数字计算,尽量用BigDecimal;
+
+利用高级数据结构:
+    TreeSet: 排序红黑树(唯一),可改写comparable, 添加和删除元素自动排序.
+    PriorityQueue: 优先队列,堆排序
+
+0.字符串
+    Pattern:
+    [字符串转换整数 (atoi)-Leetcode](https://leetcode-cn.com/problems/string-to-integer-atoi/)
+    其他:
+    [最长回文字符串-Leetcode](https://leetcode-cn.com/problems/longest-palindromic-substring/)
+    [电话号码的字母组合](https://leetcode.cn/problems/letter-combinations-of-a-phone-number/)
+
+1.数组
+    [螺旋矩阵-Leetcode](https://leetcode.cn/problems/spiral-matrix/)
+    [买卖股票的最佳时机 II-Leetcode](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/)
+    [接雨水-Leetcode](https://leetcode.cn/problems/trapping-rain-water/)
+
+2.链表
+    滑动窗口
+    [无重复字符的最长子串-Leetcode](https://leetcode.cn/problems/longest-substring-without-repeating-characters/)
+    双指针
+    [旋转链表-Leetcode](https://leetcode.cn/problems/rotate-list/)
+
+3.栈
+    Stack stack=new Stack<>();
+
+4.队列
+    Queue queue=new LinkedList<>();
+    优先队列-PriorityQueue(堆排序):
+
+5.树
+    先序、中序、后序(特殊): 栈
+    BFS: 队列
+    [对称二叉树-Leetcode](https://leetcode.cn/problems/symmetric-tree/)
+    [全排列-Leetcode](https://leetcode.cn/problems/permutations/)
+    DFS: 递归
+    [二叉树的最小深度-Leetcode](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)
+
+6.图
+    BFS
+    DFS
+    最短路径
+
+7.哈希
+
+99.动态规划
+    0-1背包
+

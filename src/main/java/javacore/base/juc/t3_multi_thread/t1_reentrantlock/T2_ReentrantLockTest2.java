@@ -22,7 +22,7 @@ public class T2_ReentrantLockTest2 implements Runnable {
         // 可重入，如果已经被上锁，则等待线程执行完毕, 资源释放。到达暂停效果。此时效果同 synchronize
         log.info("线程-" + Thread.currentThread().getName() + "开始获取重入锁.");
         lock.lock();
-        log.info("线程-" + Thread.currentThread().getName() + "完成获取重入锁.");
+        log.info("线程-" + Thread.currentThread().getName() + "获取重入锁成功.");
         try {
             for (int i = 0; i < 10; i++) {
                 log.info("线程-" + Thread.currentThread().getName() + "：" + current);
@@ -32,6 +32,7 @@ public class T2_ReentrantLockTest2 implements Runnable {
             e.printStackTrace();
         } finally {
             lock.unlock();
+            log.info("线程-" + Thread.currentThread().getName() + "释放.");
         }
     }
 

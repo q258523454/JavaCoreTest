@@ -27,7 +27,7 @@ public class Run {
         /***
          * 	shutdown()			: [非阻塞]	停止接受新任务,当已有任务将执行完,关闭线程池
          *  shutdownNow()		: [非阻塞]	停止接受新任务,试图中断已有任务,返回未执行任务列表
-         *  awaitTermination()	: [阻塞]		等待所有任务执行完, 或者超时时间到了, 或者线程被中断, 注意:不会关闭ExecutorService，只是定时检测是否关闭
+         *  awaitTermination()	: [阻塞]		等待所有任务执行完, 或者超时时间到了, 或者线程被中断, 注意:不会立即关闭ExecutorService，只是定时检测是否关闭
          *
          *  关闭功能 【从强到弱】 依次是：shuntdownNow() > shutdown() > awaitTermination()
          */

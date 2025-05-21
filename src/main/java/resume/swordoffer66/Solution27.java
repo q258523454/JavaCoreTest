@@ -37,7 +37,7 @@ public class Solution27 {
         for (int i = 0; i < arrayList.size(); i++) {
             for (int j = i + 1; j < arrayList.size(); j++) {
                 if (arrayList.get(i).equals(arrayList.get(j))) {
-                    arrayList.remove(j);
+                        arrayList.remove(j);
                     j--;
                 }
             }

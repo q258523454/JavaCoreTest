@@ -7,9 +7,6 @@ import java.util.ArrayList;
 /**
  * Created By
  * 从上往下打印出二叉树的每个节点，同层节点从左至右打印。
- *
- * @author :   zhangj
- * @date :   2018-12-25
  */
 public class Solution22_Tree_BFS {
 

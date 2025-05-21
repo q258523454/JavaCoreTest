@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Adapter extends UsbImpl implements Ps4 {
 
     /**
-     * 适配器功能: Ps4使用USB接口
+     * 适配器功能: Ps4支持USB功能
      * 第一:适配器要有USB的功能, extends usb
      * 第二:适配器能识别Ps4, implements ps4
      */

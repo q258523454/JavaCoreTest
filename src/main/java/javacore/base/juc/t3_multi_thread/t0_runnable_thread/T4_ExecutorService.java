@@ -17,9 +17,9 @@ public class T4_ExecutorService {
          * 线程池不允许使用Executors去创建,而是通过ThreadPoolExecutor的方式,规避资源耗尽的风险。
          * 说明:Executors返回的线程池对象的弊端如下:
          *   1）FixedThreadPool 和 SingleThreadPool:
-         *     允许的请求队列长度为Integer.MAX_VALUE,可能会堆积大量的请求,从而导致OOM。
+         *      允许的请求队列长度为Integer.MAX_VALUE,可能会堆积大量的请求,从而导致OOM。
          *   2）CachedThreadPool:
-         *     允许的创建线程数量为Integer.MAX_VALUE,可能会创建大量的线程,从而导致OOM。
+                允许的创建线程数量为Integer.MAX_VALUE,可能会创建大量的线程,从而导致OOM。
          *  @param corePoolSize 常驻核心线程数,一直会保留,除非手动设置允许 {@code allowCoreThreadTimeOut:允许回收}
          *  @param maximumPoolSize 最大线程数(核心线程数+非核心线程数)
          *  @param keepAliveTime 非核心线程数的最大等待时间,当线程空闲时间达到keepAliveTime时,线程会退出并回收,直到线程数量=corePoolSize
@@ -38,7 +38,7 @@ public class T4_ExecutorService {
          *   任务队列主要有4种拒绝策略：
          *   AbortPolicy(默认)：直接丢弃任务，抛出异常
          *   DiscardPolicy：直接丢弃任务，也不抛出异常
-         *   CallerRunsPolicy：只用调用者所在的线程来处理任务
+         *   CallerRunsPolicy：只用调用者所在的线程来处理任务,表现为当前页面被阻塞住了，直到当前调用者所在的线程执行完毕
          *   DiscardOldestPolicy：丢弃等待队列中最旧的任务，并执行当前任务
          *
          * 如何设置这些参数?
@@ -64,7 +64,6 @@ public class T4_ExecutorService {
          *  - keepAliveTime: 默认(60s),StackOverFlow上有人建议宁愿将线程数设置小一点,也要将keepAliveTime设置大一点.
          *
          */
-
 
         ExecutorService executorService = new ThreadPoolExecutor(5, 200, 2, TimeUnit.SECONDS,
                 new LinkedBlockingQueue<Runnable>(1024),

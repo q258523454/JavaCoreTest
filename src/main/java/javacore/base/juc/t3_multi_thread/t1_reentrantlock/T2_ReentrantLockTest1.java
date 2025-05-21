@@ -22,22 +22,24 @@ public class T2_ReentrantLockTest1 {
     public void firstLock() throws InterruptedException {
         lock.lock();
         try {
-            logger.info("第一次上锁. 当前锁数:" + lock.getHoldCount());
+            logger.info("第1次上锁. 当前锁数:" + lock.getHoldCount());
             doSecondLock();
-            logger.info("第一次上锁完成. 当前锁数:" + lock.getHoldCount());
+            logger.info("第1次上锁完成. 当前锁数:" + lock.getHoldCount());
         } finally {
+            log.info("第1次上锁-释放");
             lock.unlock();
         }
     }
 
     public void doSecondLock() throws InterruptedException {
-        log.info("准备第二次上锁. 当前锁数:" + lock.getHoldCount());
+        log.info("准备第2次上锁.");
         lock.lock();
         try {
-            log.info("第二次上锁完成. 当前锁数:" + lock.getHoldCount());
+            log.info("第2次上锁完成. 当前锁数:" + lock.getHoldCount());
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
+            log.info("第2次上锁-释放");
             lock.unlock();
         }
     }

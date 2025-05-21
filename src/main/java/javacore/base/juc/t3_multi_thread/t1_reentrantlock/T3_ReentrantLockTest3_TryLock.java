@@ -54,7 +54,6 @@ public class T3_ReentrantLockTest3_TryLock implements Runnable {
         Thread thread2 = new Thread(reentrantLockBaseTest);
         thread1.start();
         thread2.start();
-
     }
 
 }

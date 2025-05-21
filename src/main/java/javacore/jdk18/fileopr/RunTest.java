@@ -42,7 +42,9 @@ public class RunTest {
 
     }
 
-    // 打印目录下所有的文件
+    /**
+     * 打印目录下所有的文件
+     */
     public static void printDirAllFile(String srcDir) throws IOException {
         Path srcDirPath = Paths.get(srcDir);
         Files.walk(srcDirPath).forEach(subDirOrFile -> {
@@ -50,7 +52,9 @@ public class RunTest {
         });
     }
 
-    // 删除单个文件
+    /**
+     * 删除单个文件
+     */
     public static void deleteFile(String filePath) throws IOException {
         Path path = Paths.get(filePath);
         try {
@@ -61,14 +65,18 @@ public class RunTest {
         }
     }
 
-    // 删除整个目录
+    /**
+     * 删除整个目录
+     */
     public static void deleteDirectory(String dirPath) throws IOException {
         Path path = Paths.get(dirPath);
         Files.walk(path).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
     }
 
 
-    // 复制单个文件
+    /**
+     * 复制单个文件
+     */
     public static void copyFile(String src, String dst) throws IOException {
         Path srcPath = Paths.get(src);
         Path dstPath = Paths.get(dst);
@@ -76,15 +84,17 @@ public class RunTest {
     }
 
 
-    // 复制整个目录(覆盖会报:DirectoryNotEmptyException)
+    /**
+     * 复制整个目录(覆盖会报:DirectoryNotEmptyException)
+     */
     public static void copyDirecotory(String srcDir, String dstDir) throws IOException {
         Path srcDirPath = Paths.get(srcDir);
         Path dstDirPath = Paths.get(dstDir);
         Files.walk(srcDirPath).forEach(subPath -> {
             try {
                 /*
-                   path.relativize(subPath): 获取subPath在path中的相对路径
-                   path.resolve(subPath): 组装新路径,path/subPath
+                 * path.relativize(subPath): 获取subPath在path中的相对路径
+                 * path.resolve(subPath): 组装新路径,path/subPath
                  */
                 Path relativeSubPath = srcDirPath.relativize(subPath);
                 Path dst = dstDirPath.resolve(relativeSubPath);

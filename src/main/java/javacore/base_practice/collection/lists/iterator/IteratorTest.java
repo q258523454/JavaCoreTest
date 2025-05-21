@@ -71,14 +71,12 @@ public class IteratorTest {
     public static void testIterator(List<String> list, String target) {
         list.add("c");
         Iterator<String> iterator = list.iterator();
-        int i = 0;
         // 禁止foreach 循环里进行元素的 remove/add 操作, 要用 iterator
         while (iterator.hasNext()) {
             String next = iterator.next();
             if (target.equals(next)) {
                 iterator.remove();
             }
-            i++;
         }
     }
 
