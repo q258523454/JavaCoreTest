@@ -23,7 +23,7 @@ public class Solution_RemoveLastKNode {
             fast = fast.next;
             count++;
         }
-        if (null == fast ) {
+        if (null == fast) {
             // 刚好删除第一个节点
             if (count == m) {
                 return head.next;

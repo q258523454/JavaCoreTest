@@ -9,11 +9,11 @@ import java.util.List;
 
 /**
  * 后序遍历(递归)
- *          1
- *       2     3
- *     4   5
- *       6   7
- *     9
+ * 1
+ * 2     3
+ * 4   5
+ * 6   7
+ * 9
  * 后续遍历: 4,9,6,7,5,2,3,1
  */
 public class T3_AfterSearch {

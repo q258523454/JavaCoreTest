@@ -1,8 +1,8 @@
 package javacore.base.jdk.string;
 
 /**
- * @Description
  * @author zhang
+ * @Description
  * @date 2022-03-07 19:30
  * @modify
  */

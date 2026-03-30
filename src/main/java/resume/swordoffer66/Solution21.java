@@ -8,6 +8,7 @@ package resume.swordoffer66;
  * 思路: 关键是看相对顺序
  * 例如 压栈:1,2,3,4,5 弹栈:4,3,5,1,2
  * 如果弹栈第一个元素是 4, 那么 根据 1,2,3,4,5 的压栈顺序, 4之前的1,2,3出栈顺序相对顺序一定是: 3□2□1 , 明显4,3,5,1,2中 1,2的相对顺序错了
+ *
  * @author :   zhangj
  * @date :   2018-12-25
  */
@@ -60,8 +61,8 @@ public class Solution21 {
     }
 
     public static void main(String[] args) {
-        int a[] = {1,2};
-        int b[] = {2,1};
+        int a[] = {1, 2};
+        int b[] = {2, 1};
         System.out.println(new Solution21().IsPopOrder(a, b));
     }
 }

@@ -1,5 +1,3 @@
-
-
 package javacore.jdk18.a0_function.t1_consumer;
 
 import java.util.Arrays;

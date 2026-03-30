@@ -21,8 +21,9 @@ public class WorkInterceptorChain {
 
     /**
      * 添加 WorkInterceptor
+     *
      * @param interceptor WorkInterceptor
-     * @param order 优先级,越小越高.
+     * @param order       优先级,越小越高.
      */
     public void addInterceptor(WorkInterceptor interceptor, int order) {
         if (chainMap.containsKey(order)) {

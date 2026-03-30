@@ -2,6 +2,7 @@ package util;
 
 import com.alibaba.fastjson.JSONObject;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.CookieStore;
@@ -17,6 +18,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.ssl.SSLContextBuilder;
+import org.apache.http.util.EntityUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
@@ -122,10 +124,10 @@ public enum ApacheHttpUtilPro {
             if (response == null) {
                 throw new RuntimeException("response is null");
             } else if (response.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-                return getResponseJsonObject(response, saveRespHeaderName);
+                return getResponseJsonObjectEntityUtils(response, saveRespHeaderName);
             } else {
                 logger.warn("response status is not 200");
-                return getResponseJsonObject(response, saveRespHeaderName);
+                return getResponseJsonObjectEntityUtils(response, saveRespHeaderName);
             }
         } catch (Exception ex) {
             logger.error("{0}", ex);
@@ -133,12 +135,26 @@ public enum ApacheHttpUtilPro {
         }
     }
 
+    private static JSONObject getResponseJsonObjectEntityUtils(HttpResponse response, String[] saveRespHeaderName) throws IOException {
+        if (null == response.getEntity()) {
+            throw new RuntimeException("response is null");
+        }
+        HttpEntity entity = response.getEntity();
+        // 使用EntityUtils读取内容（自动处理流的关闭）,默认使用UTF-8
+        String content = EntityUtils.toString(entity, StandardCharsets.UTF_8);
+        // EntityUtils.toString()已经消耗了实体内容，但为了确保，可以再次调用consume
+        EntityUtils.consume(entity);
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("message", content);
+        return jsonObject;
+    }
 
     private static JSONObject getResponseJsonObject(HttpResponse response, String[] saveRespHeaderName) throws IOException {
+        // TODO 改成 EntityUtils
         InputStream in = response.getEntity().getContent();
-        BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(in, StandardCharsets.UTF_8));
         String lines;
-        StringBuilder responseMsg = new StringBuilder("");
+        StringBuilder responseMsg = new StringBuilder();
         while ((lines = reader.readLine()) != null) {
             lines = new String(lines.getBytes(), StandardCharsets.UTF_8);
             responseMsg.append(lines);

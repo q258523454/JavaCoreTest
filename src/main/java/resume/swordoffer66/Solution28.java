@@ -39,13 +39,13 @@ public class Solution28 {
         }
         if (count > array.length / 2) {
             return temp;
-        }else {
+        } else {
             return 0;
         }
     }
 
     public static void main(String[] args) {
-        int[] a = new int[]{4,2,1,4,2,4};
+        int[] a = new int[]{4, 2, 1, 4, 2, 4};
         System.out.println(new Solution28().MoreThanHalfNum_Solution(a));
     }
 }

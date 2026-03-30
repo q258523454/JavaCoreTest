@@ -1,6 +1,5 @@
 package javacore.base.a_supperbase.t0_generic_types.base;
 
-import lombok.Data;
 import lombok.ToString;
 
 import java.util.ArrayList;

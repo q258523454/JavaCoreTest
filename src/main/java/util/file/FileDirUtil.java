@@ -3,9 +3,13 @@ package util.file;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 /**
@@ -126,5 +130,38 @@ public enum FileDirUtil {
             }
         }
         return fileList;
+    }
+
+
+    /**
+     * 创建指定文件,存在则清空内容
+     *
+     * @param absFilePath 绝对路径
+     */
+    public static File createFileClearExistFile(String absFilePath) {
+        File outputFile = new File(absFilePath);
+        try {
+            // 获取父目录
+            File parentDir = outputFile.getParentFile();
+            // 如果父目录不存在，则创建
+            if (!parentDir.exists()) {
+                // 递归创建目录
+                boolean created = parentDir.mkdirs();
+                if (!created) {
+                    throw new RuntimeException("目录创建失败");
+                }
+            }
+            // 创建文件
+            boolean created = outputFile.createNewFile();
+            if (!created) {
+                log.warn("文件已存在, 清空内容. ：{}", outputFile.getAbsolutePath());
+                // 创建文件，如果存在则清空内容
+                Path path = Paths.get(outputFile.getPath());
+                Files.write(path, new byte[0], StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
+            }
+        } catch (IOException e) {
+            log.error("文件创建失败: {}", e.getMessage(), e);
+        }
+        return outputFile;
     }
 }

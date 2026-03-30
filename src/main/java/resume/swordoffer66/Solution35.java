@@ -43,7 +43,7 @@ public class Solution35 {
         for (int l = 0; l < temp.length; l++) {
             a[left++] = temp[l];
         }
-        return count%1000000007;
+        return count % 1000000007;
     }
 
     public static int sort(int[] arr, int left, int right) {
@@ -53,14 +53,13 @@ public class Solution35 {
             sort(arr, mid + 1, right);
             meger(arr, left, mid, right);
         }
-        return count%1000000007;
+        return count % 1000000007;
     }
 
     public int InversePairs(int[] array) {
         sort(array, 0, array.length - 1);
-        return count%1000000007;
+        return count % 1000000007;
     }
-
 
 
     public static void main(String[] args) {

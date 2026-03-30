@@ -32,7 +32,7 @@ public class RunTest {
             str = "为空";
         }
         System.out.println(str);
-        System.out.println("s=null, Optional.ofNullable(s).orElse(\"为空\"): "+Optional.ofNullable(s).orElse("为空"));
+        System.out.println("s=null, Optional.ofNullable(s).orElse(\"为空\"): " + Optional.ofNullable(s).orElse("为空"));
 
 
         String test = Optional.ofNullable(getRequest())

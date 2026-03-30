@@ -1,6 +1,7 @@
 package resume.onlineAC.c1_tree;
 
 import com.alibaba.fastjson.JSON;
+
 import resume.swordoffer66.base.TreeNode;
 
 import java.util.ArrayList;
@@ -10,11 +11,11 @@ import java.util.Stack;
 /**
  *
  * 二叉树中序遍历,非递归
- *          1
- *       2     3
- *     4   5
- *       6   7
- *     9
+ * 1
+ * 2     3
+ * 4   5
+ * 6   7
+ * 9
  * 中序遍历: 4,2,9,6,5,7,1,3
  */
 public class T2_MiddleSearchPro {

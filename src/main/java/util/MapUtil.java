@@ -4,7 +4,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
-import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public enum MapUtil {
     ;
@@ -12,10 +17,7 @@ public enum MapUtil {
 
 
     /**
-     * 升序排列
-     * @param map
-     * @param <K>
-     * @param <V>
+     * value 升序排列
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValueAsc(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());
@@ -29,10 +31,7 @@ public enum MapUtil {
     }
 
     /**
-     * 降序排列
-     * @param map
-     * @param <K>
-     * @param <V>
+     * value 降序排列
      */
     public static <K, V extends Comparable<? super V>> Map<K, V> sortByValueDesc(Map<K, V> map) {
         List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());
@@ -48,6 +47,7 @@ public enum MapUtil {
 
     /**
      * 利用反射将 {@code object}中的属性转换成{@code Map}
+     *
      * @param object 待转换的对象
      */
     public static Map<String, Object> parseObjectToMap(Object object) throws IllegalAccessException {

@@ -13,12 +13,12 @@ public enum BigIntegerUtil {
     }
 
     /**
-     * @Description 整数转换为指定进制的字符串，长度不足则左边补0
-     * @date 2021年05月19日 15:18
-     * @param radix 进制
-     * @param i 要转换的整数
+     * @param radix  进制
+     * @param i      要转换的整数
      * @param length 目标长度
      * @return 进制表示的字符串
+     * @Description 整数转换为指定进制的字符串，长度不足则左边补0
+     * @date 2021年05月19日 15:18
      */
     public static String bigIntegerToStr(int radix, BigInteger i, int length) {
 

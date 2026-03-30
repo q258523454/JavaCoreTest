@@ -10,9 +10,9 @@ public enum SpringEnvUtil {
     ;
 
     /**
+     * @return boolean
      * @Description: 判断是否本地启动 配置 active:loc
      * @date 2020/5/7 17:38
-     * @return boolean
      */
     public static boolean isLoc() {
         String[] activeProfiles = SpringContextHolder.getApplicationContext().getEnvironment().getActiveProfiles();

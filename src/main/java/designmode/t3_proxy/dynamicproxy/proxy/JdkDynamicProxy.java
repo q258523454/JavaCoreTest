@@ -19,9 +19,10 @@ public class JdkDynamicProxy implements InvocationHandler {
 
     /**
      * 重要：执行被代理对象的任何接口方法都会经过该方法（漏洞注入）
-     * @param proxy 代理对象的引用
+     *
+     * @param proxy  代理对象的引用
      * @param method 当前执行的方法
-     * @param args 当前执行方法所需的参数
+     * @param args   当前执行方法所需的参数
      */
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {

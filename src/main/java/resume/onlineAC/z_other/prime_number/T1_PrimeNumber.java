@@ -1,4 +1,3 @@
-
 package resume.onlineAC.z_other.prime_number;
 
 import java.util.Scanner;
@@ -29,11 +28,11 @@ public class T1_PrimeNumber {
             int num = in.nextInt();
             for (int i = 2; i < num; i++) {
                 if (isPrimeNumber(i)) {
-                    System.out.println("质数:"+i);
+                    System.out.println("质数:" + i);
                     count++;
                 }
             }
-            System.out.println("总数:"+count);
+            System.out.println("总数:" + count);
         }
     }
 

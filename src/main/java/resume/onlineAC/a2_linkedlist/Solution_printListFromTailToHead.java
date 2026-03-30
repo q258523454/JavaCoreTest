@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Solution_printListFromTailToHead {
 
     /**
-     *    public class ListNode {
-     *        int val;
-     *        ListNode next = null;
+     * public class ListNode {
+     * int val;
+     * ListNode next = null;
      *
-     *        ListNode(int val) {
-     *            this.val = val;
-     *        }
-     *    }
+     * ListNode(int val) {
+     * this.val = val;
+     * }
+     * }
      *
      */
 

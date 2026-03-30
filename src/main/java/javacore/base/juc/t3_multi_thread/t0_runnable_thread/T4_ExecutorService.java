@@ -2,7 +2,10 @@ package javacore.base.juc.t3_multi_thread.t0_runnable_thread;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Description
@@ -19,7 +22,7 @@ public class T4_ExecutorService {
          *   1）FixedThreadPool 和 SingleThreadPool:
          *      允许的请求队列长度为Integer.MAX_VALUE,可能会堆积大量的请求,从而导致OOM。
          *   2）CachedThreadPool:
-                允许的创建线程数量为Integer.MAX_VALUE,可能会创建大量的线程,从而导致OOM。
+         允许的创建线程数量为Integer.MAX_VALUE,可能会创建大量的线程,从而导致OOM。
          *  @param corePoolSize 常驻核心线程数,一直会保留,除非手动设置允许 {@code allowCoreThreadTimeOut:允许回收}
          *  @param maximumPoolSize 最大线程数(核心线程数+非核心线程数)
          *  @param keepAliveTime 非核心线程数的最大等待时间,当线程空闲时间达到keepAliveTime时,线程会退出并回收,直到线程数量=corePoolSize

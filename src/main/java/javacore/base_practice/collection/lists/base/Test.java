@@ -1,4 +1,3 @@
-
 package javacore.base_practice.collection.lists.base;
 
 import com.alibaba.fastjson.JSON;

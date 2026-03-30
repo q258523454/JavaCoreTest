@@ -1,6 +1,7 @@
 package javacore.base_practice.collection.set.hashset.entity;
 
 import com.alibaba.fastjson.JSONObject;
+
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -52,6 +53,7 @@ public class Student {
 
     /**
      * 同类型、判断属性值相等
+     *
      * @param o
      * @return
      */

@@ -78,7 +78,8 @@ public class Solution_AddInList2 {
 
     /**
      * 两个数组进行相加
-     * @param longArr 长数组
+     *
+     * @param longArr  长数组
      * @param shortArr 短数组
      */
     public int[] calcAdd(int[] longArr, int[] shortArr) {

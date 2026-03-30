@@ -1,4 +1,3 @@
-
 package designmode.t9_strategy.practice.context;
 
 import designmode.t9_strategy.practice.enums.OperationEnums;

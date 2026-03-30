@@ -2,7 +2,11 @@ package javacore.base.juc.t3_multi_thread.t4_wait_semaphore.t1_wait_semaphore;
 
 import javacore.base.juc.t3_multi_thread.t0_runnable_thread.ThreadFactoryImpl;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.Semaphore;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Run {
 

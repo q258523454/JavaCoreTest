@@ -7,6 +7,7 @@ import java.util.Arrays;
 /**
  * Created By
  * 扑克牌顺子, JQK为11,12,13,大小王为0,可以变任何数字
+ *
  * @author :   zhangj
  * @date :   2019-01-10
  */

@@ -1,4 +1,3 @@
-
 package practice.readjson;
 
 import com.alibaba.fastjson.JSONObject;
@@ -7,7 +6,6 @@ import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.MessageFormat;
 import java.util.List;
 
 public class Test {

@@ -1,6 +1,7 @@
 package javacore.base_practice.collection.set.hashset.entity;
 
 import com.alibaba.fastjson.JSONObject;
+
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Random;
@@ -40,6 +41,7 @@ public class Student2 {
 
     /**
      * 随机规则生成hashCode
+     *
      * @return
      */
     @Override

@@ -1,7 +1,4 @@
-
 package resume.onlineAC.z_other.prime_number;
-
-import com.alibaba.fastjson.JSON;
 
 import java.util.Arrays;
 
@@ -40,7 +37,7 @@ public class T1_PrimeNumberPro {
                 }
             }
         }
-        for (int i = isPrime.length-1; i >0; i--) {
+        for (int i = isPrime.length - 1; i > 0; i--) {
             if (isPrime[i] == 1) {
                 System.out.println(i);
                 break;

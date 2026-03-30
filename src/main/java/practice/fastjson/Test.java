@@ -1,4 +1,3 @@
-
 package practice.fastjson;
 
 import com.alibaba.fastjson.JSON;
@@ -17,12 +16,12 @@ public class Test {
      * 序列化单个对象
      * 待序列化内容如下:
      * {
-     *   "age": 18,
-     *   "bag": {
-     *     "color": "black",
-     *     "name": "nike"
-     *   },
-     *   "name": "zhangsan"
+     * "age": 18,
+     * "bag": {
+     * "color": "black",
+     * "name": "nike"
+     * },
+     * "name": "zhangsan"
      * }
      */
     public static final String JSON_PATH = "E:\\JavaProject\\local\\JavaCoreTest\\src\\main\\resources\\jsonfile\\student.json";
@@ -31,22 +30,22 @@ public class Test {
      * 序列化 对象List
      * 待序列化内容如下:
      * [
-     *   {
-     *     "name": "zhangsan",
-     *     "age": 18,
-     *     "bag": {
-     *       "color": "black",
-     *       "name": "nike"
-     *     }
-     *   },
-     *   {
-     *     "name": "lisi",
-     *     "age": 25,
-     *     "bag": {
-     *       "color": "red",
-     *       "name": "lining"
-     *     }
-     *   }
+     * {
+     * "name": "zhangsan",
+     * "age": 18,
+     * "bag": {
+     * "color": "black",
+     * "name": "nike"
+     * }
+     * },
+     * {
+     * "name": "lisi",
+     * "age": 25,
+     * "bag": {
+     * "color": "red",
+     * "name": "lining"
+     * }
+     * }
      * ]
      */
     public static final String JSON_LIST_PATH = "E:\\JavaProject\\local\\JavaCoreTest\\src\\main\\resources\\jsonfile\\studentlist.json";

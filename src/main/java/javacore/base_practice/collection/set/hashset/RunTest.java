@@ -1,6 +1,7 @@
 package javacore.base_practice.collection.set.hashset;
 
 import com.alibaba.fastjson.JSONObject;
+
 import javacore.base_practice.collection.set.hashset.entity.Student;
 import javacore.base_practice.collection.set.hashset.entity.Student2;
 import javacore.base_practice.collection.set.hashset.entity.StudentOrg;

@@ -1,5 +1,3 @@
-
-
 package util.file;
 
 import lombok.SneakyThrows;
@@ -139,6 +137,6 @@ public enum FileReadUtil {
         String md5 = digestUtils.digestAsHex(sha256Stream);
         System.out.println("文件 MD5: " + md5);
         byte[] hexByte = Hex.decodeHex(md5.toCharArray());
-        System.out.println(BASE64Util.encode(hexByte));
+        System.out.println(BASE64Util.encryptBASE64(hexByte));
     }
 }

@@ -1,40 +1,35 @@
 package util.encrypt;
 
-import lombok.extern.slf4j.Slf4j;
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
+import java.util.Base64;
 
-import java.io.IOException;
-
-@Slf4j
-public class BASE64Util {
+public enum BASE64Util {
     ;
 
     /**
-     * BASE64Encoder
+     * Base64编码
      */
-    private static final BASE64Encoder ENCODER = new BASE64Encoder();
-
-    /**
-     * BASE64Decoder
-     */
-    private static final BASE64Decoder DECODER = new BASE64Decoder();
-
-    /**
-     * Decode
-     * @param str BASE64字符串
-     * @return the byte 字节
-     */
-    public static byte[] decode(String str) throws IOException {
-        return DECODER.decodeBuffer(str);
+    public static String encryptBASE64(byte[] key) {
+        return Base64.getEncoder().encodeToString(key);
     }
 
     /**
-     * Encode
-     * @param bytes 输入字节
-     * @return BASE64字符串
+     * Base64解码
      */
-    public static String encode(byte[] bytes) {
-        return ENCODER.encodeBuffer(bytes);
+    public static byte[] decryptBASE64(String key) {
+        return Base64.getDecoder().decode(key);
+    }
+
+    /**
+     * URL安全的Base64编码（用于URL参数）
+     */
+    public static String encryptBASE64UrlSafe(byte[] key) {
+        return Base64.getUrlEncoder().encodeToString(key);
+    }
+
+    /**
+     * 带换行的Base64编码（用于MIME格式）
+     */
+    public static String encryptBASE64Mime(byte[] key) {
+        return Base64.getMimeEncoder().encodeToString(key);
     }
 }

@@ -1,9 +1,9 @@
 package resume.swordoffer66;
 
 
-import resume.swordoffer66.base.ListNode;
-
 import static resume.swordoffer66.base.ListNode.printListNode;
+
+import resume.swordoffer66.base.ListNode;
 
 /**
  * Created By

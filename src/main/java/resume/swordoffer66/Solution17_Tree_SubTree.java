@@ -110,8 +110,8 @@ public class Solution17_Tree_SubTree {
     public static void main(String[] args) {
 
 
-        TreeNode A = TreeNode.getTree(new int[]{8,8,7,9,2,0,0,0,0,4,7});
-        TreeNode B = TreeNode.getTree(new int[]{8,9,2});
+        TreeNode A = TreeNode.getTree(new int[]{8, 8, 7, 9, 2, 0, 0, 0, 0, 4, 7});
+        TreeNode B = TreeNode.getTree(new int[]{8, 9, 2});
         TreeNode.printTreeBroad(A);
         TreeNode.printTreeBroad(B);
 

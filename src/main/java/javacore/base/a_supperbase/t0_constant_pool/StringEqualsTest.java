@@ -35,7 +35,7 @@ public class StringEqualsTest {
         String c = "ab";
         String d = a + b;
         System.out.println("c == d：" + (c == d));
-        System.out.println("c.equals(d)：" +c.equals(d));
+        System.out.println("c.equals(d)：" + c.equals(d));
 
     }
 }

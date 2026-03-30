@@ -1,4 +1,3 @@
-
 package javacore.jdk18.a0_function.t0_function;
 
 import lombok.extern.slf4j.Slf4j;

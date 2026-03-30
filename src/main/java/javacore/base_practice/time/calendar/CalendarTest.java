@@ -36,7 +36,7 @@ public class CalendarTest {
         Calendar cal = Calendar.getInstance();
         cal.setTime(sdf.parse("20170228"));
 //        cal.set(2017,1,28);
-        System.out.println("SimpleDateFormat:"+sdf.format(cal.getTime()));
+        System.out.println("SimpleDateFormat:" + sdf.format(cal.getTime()));
 
         // 判断date是否是一个月的最后一天，如果是最后一天，则加N个月后还是最后一天。
         if (cal.get(Calendar.DAY_OF_MONTH) == cal.getActualMaximum(Calendar.DAY_OF_MONTH)) {
@@ -62,7 +62,7 @@ public class CalendarTest {
         int y = calendar4.get(Calendar.YEAR);
         int m = calendar4.get(Calendar.MONTH);
         int d = calendar4.get(Calendar.DAY_OF_MONTH);
-        System.out.println("1571932800000L Millis 表示：" + y + "年"+ m + "月"+ d + "日");
+        System.out.println("1571932800000L Millis 表示：" + y + "年" + m + "月" + d + "日");
 
         day.setTime(calendar4.getTimeInMillis());
         System.out.println(dateFormat.format(day));

@@ -24,7 +24,7 @@ public class ThreadABC {
         CountDownLatch signalBC = new CountDownLatch(1);
 
         A a = new A(signalAB);
-        B b = new B(signalAB,signalBC);
+        B b = new B(signalAB, signalBC);
         C c = new C(signalBC);
 
         // 线程池中 按顺序执行 A->B->C

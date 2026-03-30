@@ -24,7 +24,7 @@ public enum DigestUtil {
 
     /**
      *
-     * @param input 加密字符
+     * @param input     加密字符
      * @param algorithm MD5,SHA-256,SHA512等算法
      */
     public static String digest(String input, String algorithm) {
@@ -46,6 +46,7 @@ public enum DigestUtil {
 
     /**
      * 对字节进行16进制编码, byte 转换成 char
+     *
      * @param bytes
      * @return
      */

@@ -60,13 +60,13 @@ public class SystemClockUtil {
      * @return 当前时间
      */
     public static long now() {
-        return SystemClockUtil.InstanceHolder.INSTANCE.currentTimeMillis();
+        return InstanceHolder.INSTANCE.currentTimeMillis();
     }
 
     /**
      * @return 当前时间字符串表现形式
      */
     public static String nowDate() {
-        return new Timestamp(SystemClockUtil.InstanceHolder.INSTANCE.currentTimeMillis()).toString();
+        return new Timestamp(InstanceHolder.INSTANCE.currentTimeMillis()).toString();
     }
 }

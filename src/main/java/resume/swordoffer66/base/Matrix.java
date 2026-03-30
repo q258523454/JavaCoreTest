@@ -13,9 +13,9 @@ public class Matrix {
         int[][] p = new int[3][];
 
         for (int i = 0; i < p.length; i++) {
-            int[] t = new int[i+1];
+            int[] t = new int[i + 1];
             for (int j = 0; j < t.length; j++) {
-                t[j] = j+1;
+                t[j] = j + 1;
             }
             p[i] = t;
         }

@@ -2,8 +2,11 @@ package javacore.jdk18.stream;
 
 import com.alibaba.fastjson.JSON;
 
-import java.util.*;
-import java.util.function.Predicate;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 

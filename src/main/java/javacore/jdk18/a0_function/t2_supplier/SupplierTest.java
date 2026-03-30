@@ -1,11 +1,7 @@
-
-
 package javacore.jdk18.a0_function.t2_supplier;
 
-import java.util.Optional;
 import java.util.Random;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class SupplierTest {
 

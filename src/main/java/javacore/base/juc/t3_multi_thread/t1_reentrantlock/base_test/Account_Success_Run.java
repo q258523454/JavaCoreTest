@@ -20,7 +20,7 @@ public class Account_Success_Run {
         wife.start();
         // 丈夫取钱
         husband.start();
-        logger.info(Thread.currentThread().getName()+"执行完成.");
+        logger.info(Thread.currentThread().getName() + "执行完成.");
     }
 
 

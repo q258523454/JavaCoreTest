@@ -1,7 +1,5 @@
 package javacore.jdk18.fileopr;
 
-import com.alibaba.fastjson.JSON;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;

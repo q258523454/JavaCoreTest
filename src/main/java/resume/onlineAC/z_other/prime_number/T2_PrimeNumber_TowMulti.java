@@ -1,4 +1,3 @@
-
 package resume.onlineAC.z_other.prime_number;
 
 import java.util.Arrays;

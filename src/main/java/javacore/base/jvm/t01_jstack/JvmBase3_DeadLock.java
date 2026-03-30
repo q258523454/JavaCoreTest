@@ -10,9 +10,9 @@ public class JvmBase3_DeadLock {
      * 执行下面函数
      * 第一种方法: 本地运行
      * 第二种方法:
-     *          1. 将这个java文件拷贝到 linux的javacore/baseimpro/jvm/abase目录下
-     *          2. 执行 javac javacore/baseimpro/jvm/abase/JvmBase3_DeadLock.java编译
-     *          3. 运行 java javacore.baseimpro.jvm.abase.JvmBase3_DeadLock
+     * 1. 将这个java文件拷贝到 linux的javacore/baseimpro/jvm/abase目录下
+     * 2. 执行 javac javacore/baseimpro/jvm/abase/JvmBase3_DeadLock.java编译
+     * 3. 运行 java javacore.baseimpro.jvm.abase.JvmBase3_DeadLock
      * jps 找到进程的id
      * jstack pid 会出现: Found 1 deadlock.
      */

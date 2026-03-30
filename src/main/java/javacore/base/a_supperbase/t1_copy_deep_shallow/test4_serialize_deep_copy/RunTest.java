@@ -1,13 +1,12 @@
 package javacore.base.a_supperbase.t1_copy_deep_shallow.test4_serialize_deep_copy;
 
 import com.alibaba.fastjson.JSONObject;
+
 import javacore.base.a_supperbase.t1_copy_deep_shallow.test4_serialize_deep_copy.entity.Bag;
 import javacore.base.a_supperbase.t1_copy_deep_shallow.test4_serialize_deep_copy.entity.Pen;
 import javacore.base.a_supperbase.t1_copy_deep_shallow.test4_serialize_deep_copy.entity.Student;
 import javacore.base.a_supperbase.t1_copy_deep_shallow.test4_serialize_deep_copy.util.CloneUtils;
 import lombok.extern.slf4j.Slf4j;
-
-import java.io.Serializable;
 
 @Slf4j
 public class RunTest {

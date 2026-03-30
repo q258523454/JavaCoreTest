@@ -3,8 +3,8 @@ package util;
 
 /**
  * @Description SnowFlake算法
- *              UUID: 过长(36位),无序, 数据库查询效率不高. eg:47302f37-a80d-4bb1-90fd-bb5eb50857f5
- *              雪花: 仅18位, 按时间升序. eg:496014348603633738
+ * UUID: 过长(36位),无序, 数据库查询效率不高. eg:47302f37-a80d-4bb1-90fd-bb5eb50857f5
+ * 雪花: 仅18位, 按时间升序. eg:496014348603633738
  * @date 2020-08-26 15:03
  */
 public class SnowFlakeUtil {
@@ -32,8 +32,8 @@ public class SnowFlakeUtil {
      * SnowFlake的缺点：
      * 1.依赖机器时钟，如果机器时钟回拨，会导致重复ID生成
      * 2.在单机上是递增的，但是由于设计到分布式环境，每台机器上的时钟不可能完全同步，
-     *   有时候会出现不是全局递增的情况（此缺点可以认为无所谓，一般分布式ID只要求趋势递增，
-     *   并不会严格要求递增～90%的需求都只要求趋势递增
+     * 有时候会出现不是全局递增的情况（此缺点可以认为无所谓，一般分布式ID只要求趋势递增，
+     * 并不会严格要求递增～90%的需求都只要求趋势递增
      */
     private final static long MACHINE_BIT = 5;   // 机器标识占用的位数
     private final static long DATACENTER_BIT = 5;// 数据中心占用的位数
@@ -76,8 +76,9 @@ public class SnowFlakeUtil {
 
     /**
      * 初始化SnowFlake
+     *
      * @param datacenterId 数据中心, 最大5bit, MAX=31
-     * @param machineId 机器标识, 最大5bit, MAX=31
+     * @param machineId    机器标识, 最大5bit, MAX=31
      */
     public SnowFlakeUtil(long datacenterId, long machineId) {
         // 整数最大不能超过31

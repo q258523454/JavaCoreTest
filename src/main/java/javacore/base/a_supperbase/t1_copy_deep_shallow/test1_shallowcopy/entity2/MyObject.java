@@ -1,4 +1,3 @@
-
 package javacore.base.a_supperbase.t1_copy_deep_shallow.test1_shallowcopy.entity2;
 
 import lombok.AllArgsConstructor;

@@ -169,17 +169,17 @@ public enum StringUtil {
         String jFull = "ｺﾝﾆ:、；";
         String jHalf = "コンニ：､;";
 
-        System.out.println("转全角 " + StringUtil.StringTransform.half2Full(half));
-        System.out.println("转全角 " + StringUtil.StringTransform.half2Full(full));
-        System.out.println("转全角 " + StringUtil.StringTransform.half2Full(jHalf));
-        System.out.println("转全角 " + StringUtil.StringTransform.half2Full(jFull));
+        System.out.println("转全角 " + StringTransform.half2Full(half));
+        System.out.println("转全角 " + StringTransform.half2Full(full));
+        System.out.println("转全角 " + StringTransform.half2Full(jHalf));
+        System.out.println("转全角 " + StringTransform.half2Full(jFull));
 
         System.out.println();
 
-        System.out.println("转半角 " + StringUtil.StringTransform.full2Half(half));
-        System.out.println("转半角 " + StringUtil.StringTransform.full2Half(full));
-        System.out.println("转半角 " + StringUtil.StringTransform.full2Half(jHalf));
-        System.out.println("转半角 " + StringUtil.StringTransform.full2Half(jFull));
+        System.out.println("转半角 " + StringTransform.full2Half(half));
+        System.out.println("转半角 " + StringTransform.full2Half(full));
+        System.out.println("转半角 " + StringTransform.full2Half(jHalf));
+        System.out.println("转半角 " + StringTransform.full2Half(jFull));
 
     }
 }

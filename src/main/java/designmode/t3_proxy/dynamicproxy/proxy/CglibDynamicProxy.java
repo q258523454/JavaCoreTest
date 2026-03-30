@@ -1,6 +1,7 @@
 package designmode.t3_proxy.dynamicproxy.proxy;
 
 import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.cglib.proxy.MethodInterceptor;
 import org.springframework.cglib.proxy.MethodProxy;
 
@@ -11,6 +12,7 @@ public class CglibDynamicProxy implements MethodInterceptor {
 
     /**
      * 回调函数
+     *
      * @param proxy 当前执行方法的代理对象
      */
     @Override
