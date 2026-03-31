@@ -29,7 +29,7 @@ public class WeakReferenceTest {
 
         log.info("-----bytes开始置为null----------");
         // 去掉强引用
-        //注意: bytes=null,Reference 不管是什么类型引用仍然指向原来new byte[]的地址.
+        // 注意: bytes=null,Reference 不管是什么类型引用仍然指向原来new byte[]的地址.
         bytes = null;
         log.info("第一次GC前,bytes=" + bytes);
         log.info("第一次GC前,weakReference.get()=" + weakReference.get());

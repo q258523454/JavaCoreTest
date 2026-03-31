@@ -38,7 +38,7 @@ public class Solution62_Tree_find_K {
                 }
                 // 后面全是null节点,不在添加到链表
                 if (temp == null) {
-                    //TODO do nothing
+                    // TODO do nothing
                 } else {
                     // 为null节点,但是后面还有不为null的节点,继续添加左右节点,补充二叉树
                     tail.next = new LinkTree(null);

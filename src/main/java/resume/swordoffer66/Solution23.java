@@ -58,7 +58,7 @@ public class Solution23 {
         }
         // 至此, 二叉搜索树, 左子树范围确定: [0,r]
 
-        //printConsole(sequence, start, r, end);
+        // printConsole(sequence, start, r, end);
 
         return true && VerifySubSquenceOfBST(sequence, start, r) && VerifySubSquenceOfBST(sequence, r + 1, end - 1);
     }

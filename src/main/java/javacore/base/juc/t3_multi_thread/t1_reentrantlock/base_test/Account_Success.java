@@ -29,10 +29,10 @@ public class Account_Success implements Runnable {
         lock.lock();
         try {
             log.info("{}开始取钱", Thread.currentThread().getName());
-            int balance = money; //当前余额
+            int balance = money; // 当前余额
             if (balance > 0) {
                 Thread.sleep(1000);
-                money = money - 100;   //取走100元
+                money = money - 100;   // 取走100元
                 log.info("当前余额为" + balance + "元，" + Thread.currentThread().getName() + "取走100元，还剩" + money + "元");
             } else {
                 log.info("余额不足,{}取钱失败", Thread.currentThread().getName());

@@ -25,7 +25,7 @@ public class Solution56 {
     int[] charCount = new int[128];
     Link head = new Link(-1);
 
-    //Insert one char from stringstream
+    // Insert one char from stringstream
     public void Insert(char ch) {
         // 首先将字符的计数+1
         charCount[ch]++;
@@ -49,7 +49,7 @@ public class Solution56 {
         }
     }
 
-    //return the first appearence once char in current stringstream
+    // return the first appearence once char in current stringstream
     public char FirstAppearingOnce() {
         if (head.next != null) {
             return (char) head.next.val;

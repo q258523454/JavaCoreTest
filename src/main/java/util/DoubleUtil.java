@@ -15,7 +15,7 @@ public enum DoubleUtil {
 
     private static final Logger logger = LoggerFactory.getLogger(DoubleUtil.class);
 
-    //默认除法运算精度
+    // 默认除法运算精度
     private static final int DEF_DIV_SCALE = 10;
 
     /**

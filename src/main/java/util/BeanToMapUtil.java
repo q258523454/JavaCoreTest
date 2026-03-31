@@ -56,21 +56,21 @@ public enum BeanToMapUtil {
      */
     public static void readAttributeValue(Object obj) {
         StringBuilder nameVlues = new StringBuilder();
-        //Get class
+        // Get class
         Class cls = obj.getClass();
-        //Get all attributes
+        // Get all attributes
         Field[] fields = cls.getDeclaredFields();
-        for (int i = 0; i < fields.length; i++) {//Traverse
+        for (int i = 0; i < fields.length; i++) {// Traverse
             try {
-                //Get attributes
+                // Get attributes
                 Field field = fields[i];
-                //Turn on private access
+                // Turn on private access
                 field.setAccessible(true);
-                //Get attributes name
+                // Get attributes name
                 String name = field.getName();
-                //Get attribute value
+                // Get attribute value
                 Object value = field.get(obj);
-                //Assign one by one
+                // Assign one by one
                 nameVlues.append("name:").append(name).append(", value:").append(value).append(",");
             } catch (IllegalAccessException e) {
                 e.printStackTrace();

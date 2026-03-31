@@ -10,7 +10,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.2.2.RELEASE</version>
+        <version>3.4.13</version>
         <relativePath/>
     </parent>
 
@@ -28,6 +28,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+
         <!-- 2.下载在局域网nexus仓库才有的jar包, 首先从本地.m2仓库查找 -->
         <!-- ———————————————————————— 下面的依赖是来自本地nexus仓库 BEGIN————————————————————————  -->
         <!--<dependency>-->
@@ -40,12 +45,12 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.49</version>
+            <version>1.2.83</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.13</version>
+            <version>8.0.28</version>
         </dependency>
 
         <!-- logback BEGIN -->
@@ -57,12 +62,12 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
+            <version>1.5.13</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.2.3</version>
+            <version>1.5.25</version>
         </dependency>
         <!-- logback END -->
 
@@ -70,7 +75,7 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>30.1.1-jre</version>
+            <version>32.0.1-android</version>
         </dependency>
         <!-- Google guava END -->
 
@@ -89,7 +94,7 @@
         <dependency>
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
-            <version>3.5.3</version>
+            <version>3.5.6</version>
         </dependency>
 
         <!-- —————————————— jackson BEGIN——————————————-->
@@ -102,7 +107,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.14.2</version>
+            <version>2.21.1</version>
         </dependency>
 
         <dependency>
@@ -128,7 +133,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.10</version>
+            <version>3.18.0</version>
         </dependency>
 
         <dependency>
@@ -152,7 +157,7 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>5.7.3</version>
+            <version>5.8.40</version>
         </dependency>
 
         <dependency>
@@ -196,6 +201,16 @@
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
             <version>3.13.5</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>slf4j-api</artifactId>
+                    <groupId>org.slf4j</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>snakeyaml</artifactId>
+                    <groupId>org.yaml</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>

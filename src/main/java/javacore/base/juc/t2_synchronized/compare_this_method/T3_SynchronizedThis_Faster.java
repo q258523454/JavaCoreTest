@@ -38,7 +38,7 @@ public class T3_SynchronizedThis_Faster {
                     }
                 }
             };
-            executor.execute(runnable);  //线程池执行其中的线程
+            executor.execute(runnable);  // 线程池执行其中的线程
         }
         try {
             Thread.sleep((long) (Math.random() * 1000));

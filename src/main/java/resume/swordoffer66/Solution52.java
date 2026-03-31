@@ -19,7 +19,7 @@ public class Solution52 {
     // Return value:       true if the input is valid, and there are some duplications in the array number
     //                     otherwise false
     public boolean duplicate(int numbers[], int length, int[] duplication) {
-        //0~length-1之间,长度为length
+        // 0~length-1之间,长度为length
         int[] temp = new int[length]; // int 默认为0
         for (int i = 0; i < length; i++) {
             temp[numbers[i]]++;

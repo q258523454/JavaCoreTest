@@ -70,7 +70,7 @@ public class T2_Complete_Exception {
 
         // 下面这行代码直接报错, 如果要用, 换成handle(允许返回)
         // whenComplete 是没有返回值的, whenComplete.get() 直接返回的 supplyAsync 结果, 有异常则直接会抛出
-        //System.out.println("a任务完成,whenComplete return:" + whenComplete.get());
+        // System.out.println("a任务完成,whenComplete return:" + whenComplete.get());
 
         // a 出现异常后动作
         CompletableFuture<Integer> exceptionally = a.exceptionally(new Function<Throwable, Integer>() {

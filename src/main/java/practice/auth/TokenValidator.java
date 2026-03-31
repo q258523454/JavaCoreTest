@@ -8,12 +8,12 @@ import practice.auth.entity.ValidationResult;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.Base64Utils;
 
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
@@ -99,7 +99,7 @@ public enum TokenValidator {
             String signature = parts[2];
 
             // 解析Payload获取appId
-            String payloadJson = new String(Base64Utils.decodeFromString(payloadBase64), StandardCharsets.UTF_8);
+            String payloadJson = new String(Base64.getDecoder().decode(payloadBase64.getBytes(StandardCharsets.UTF_8)));
 
             TokenPayload tokenPayload = OBJECT_MAPPER.readValue(payloadJson, TokenPayload.class);
             String appId = tokenPayload.getAppId();
@@ -122,7 +122,8 @@ public enum TokenValidator {
             }
 
             // 验证签名
-            byte[] credential = Base64Utils.decodeFromString(credentialBase64);
+            byte[] credential = Base64.getDecoder().decode((credentialBase64.getBytes(StandardCharsets.UTF_8)));
+
             String signContent = headerBase64 + TOKEN_SEPARATOR + payloadBase64;
             if (!verifySignature(signContent, signature, credential)) {
                 result.setValid(false);
@@ -181,7 +182,8 @@ public enum TokenValidator {
             mac.init(secretKeySpec);
 
             byte[] expectedSignature = mac.doFinal(data.getBytes(StandardCharsets.UTF_8));
-            String expectedSignatureBase64 = Base64Utils.encodeToString(expectedSignature);
+
+            String expectedSignatureBase64 = Base64.getEncoder().encodeToString(expectedSignature);
 
             return signature.equals(expectedSignatureBase64);
 

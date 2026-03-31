@@ -37,7 +37,7 @@ public class ThreadABC {
             // 唤醒A线程,依次执行A,B,C
             sequenceLock.getConditionA().signal();
         } catch (Exception ex) {
-            //TODO
+            // TODO
         } finally {
             sequenceLock.getLock().unlock();
         }

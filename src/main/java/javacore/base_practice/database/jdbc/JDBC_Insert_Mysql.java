@@ -49,7 +49,7 @@ public class JDBC_Insert_Mysql implements Runnable {
             // 设置事务为非自动提交
             conn.setAutoCommit(false);
             // 比起st，pst会更好些
-            PreparedStatement ps = (PreparedStatement) conn.prepareStatement("");//准备执行语句
+            PreparedStatement ps = (PreparedStatement) conn.prepareStatement("");// 准备执行语句
             // 外层循环，总提交事务次数
             for (int i = 1; i <= 1000; i++) {
                 String age = Double.toString(18 + (int) (Math.random() * ((25 - 18) + 1)));

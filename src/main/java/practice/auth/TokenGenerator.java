@@ -9,12 +9,12 @@ import util.SecureNumberUtil;
 import org.apache.http.auth.AuthenticationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.Base64Utils;
 
 import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.time.Instant;
+import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -61,7 +61,7 @@ public enum TokenGenerator {
     public static String generateToken(String appId, String credentialBase64) throws AuthenticationException {
         try {
             // 解码credential
-            byte[] credential = Base64Utils.decodeFromString(credentialBase64);
+            byte[] credential = Base64.getDecoder().decode(credentialBase64.getBytes(StandardCharsets.UTF_8));
 
             // 构建Header
             Map<String, Object> header = new HashMap<>();
@@ -69,7 +69,7 @@ public enum TokenGenerator {
             header.put("algorithm", SIGN_ALGORITHM);
             header.put("type", "JWT");
             String headerJson = OBJECT_MAPPER.writeValueAsString(header);
-            String headerBase64 = Base64Utils.encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
+            String headerBase64 = Base64.getEncoder().encodeToString(headerJson.getBytes(StandardCharsets.UTF_8));
 
             // 构建Payload
             long currentTime = Instant.now().getEpochSecond();
@@ -83,7 +83,7 @@ public enum TokenGenerator {
 
             String payloadJson = OBJECT_MAPPER.writeValueAsString(tokenPayload);
 
-            String payloadBase64 = Base64Utils.encodeToString(payloadJson.getBytes(StandardCharsets.UTF_8));
+            String payloadBase64 = Base64.getEncoder().encodeToString(payloadJson.getBytes(StandardCharsets.UTF_8));
 
             // 签名内容
             String signContent = headerBase64 + TOKEN_SEPARATOR + payloadBase64;
@@ -108,7 +108,7 @@ public enum TokenGenerator {
         mac.init(secretKeySpec);
 
         byte[] signatureBytes = mac.doFinal(data.getBytes(StandardCharsets.UTF_8));
-        return Base64Utils.encodeToString(signatureBytes);
+        return Base64.getEncoder().encodeToString(signatureBytes);
     }
 
     /**
@@ -128,7 +128,7 @@ public enum TokenGenerator {
                 throw new IllegalArgumentException("Token format error");
             }
             String payloadBase64 = parts[1];
-            String payloadJson = new String(Base64Utils.decodeFromString(payloadBase64), StandardCharsets.UTF_8);
+            String payloadJson = new String(Base64.getDecoder().decode(payloadBase64), StandardCharsets.UTF_8);
             return OBJECT_MAPPER.readValue(payloadJson, TokenPayload.class);
         } catch (Exception e) {
             throw new IllegalArgumentException("Parsing token failed", e);

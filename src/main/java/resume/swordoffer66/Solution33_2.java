@@ -8,7 +8,7 @@ public class Solution33_2 {
         ArrayList<Integer> list = new ArrayList<Integer>();
         list.add(1);
         int i2 = 0, i3 = 0, i5 = 0;
-        while (list.size() < n)//循环的条件
+        while (list.size() < n)// 循环的条件
         {
             // 1363 429981696
             if (list.size() == 1364) {

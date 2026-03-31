@@ -15,7 +15,9 @@ import java.util.concurrent.Executors;
 
 @Slf4j
 public class T4_SynchronizedMethod_Slower {
+
     public static void main(String[] args) {
+        /**/
         ExecutorService executor = Executors.newFixedThreadPool(50);
 
         final CountDownLatch callOrder = new CountDownLatch(1);
@@ -38,7 +40,7 @@ public class T4_SynchronizedMethod_Slower {
                     }
                 }
             };
-            executor.execute(runnable);  //线程池执行其中的线程
+            executor.execute(runnable);  // 线程池执行其中的线程
         }
         try {
             Thread.sleep((long) (Math.random() * 1000));
@@ -49,6 +51,7 @@ public class T4_SynchronizedMethod_Slower {
 
             long beginTime = System.currentTimeMillis();
             // 等待线程池中的线程执行完毕
+
             latch.await();
             long endTime = System.currentTimeMillis();
             log.info("线程" + Thread.currentThread().getName() + "已收到所有响应结果,所用时间为：" + (endTime - beginTime));

@@ -8,7 +8,7 @@ package javacore.base.juc.t3_multi_thread.t0_runnable_thread;
  */
 
 
-class T2_OnlyThread extends Thread {  //继承Thread
+class T2_OnlyThread extends Thread {  // 继承Thread
     T2_OnlyThread(String name) {
         super(name);
     }
@@ -28,7 +28,7 @@ class T2_OnlyThread extends Thread {  //继承Thread
 
     public static class RunDemo {
         public static void main(String[] args) {
-            //创建两个线程任务
+            // 创建两个线程任务
             T2_OnlyThread d = new T2_OnlyThread("主线程");
             T2_OnlyThread d2 = new T2_OnlyThread("子线程A");
             T2_OnlyThread d3 = new T2_OnlyThread("子线程B");

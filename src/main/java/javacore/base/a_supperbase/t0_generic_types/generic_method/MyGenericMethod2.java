@@ -61,7 +61,7 @@ public class MyGenericMethod2 {
         // apple是Fruit的子类，所以这里可以
         typeShow.show_1(apple);
         // 编译器会报错，因为泛型类型实参指定的是Fruit，而传入的实参类是Person
-        //typeShow.show_1(person);
+        // typeShow.show_1(person);
 
         // 使用这两个方法都可以成功 <T>新声明的类型
         typeShow.show_2(apple);
