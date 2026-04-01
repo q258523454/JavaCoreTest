@@ -2,7 +2,6 @@ package practice.auth;
 
 import com.alibaba.fastjson.JSON;
 
-
 import practice.auth.entity.ValidationResult;
 import util.encrypt.BASE64Util;
 

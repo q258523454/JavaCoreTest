@@ -1,4 +1,4 @@
-select *
-from student t1
-         left join person t2 on t1.id = t2.id
-order by age DESC
+SELECT *
+FROM student t1
+     LEFT JOIN person t2 ON t1.id = t2.id
+ORDER BY age DESC
